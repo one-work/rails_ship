@@ -8,3 +8,4 @@
   <p class="text-success"><time data-controller="time"><%= model.loaded_at&.to_fs(:iso8601) %></time></p>
   <p class="text-danger"><time data-controller="time"><%= model.unloaded_at&.to_fs(:iso8601) %></time></p>
 </td>
+<td><%= render partial: 'index_tr_actions', locals: { model: model } %></td>
