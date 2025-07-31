@@ -1,4 +1,4 @@
-<%= link_to({ controller: 'ship/me/boxes', action: 'qrcode', id: @box.id, host: @box.organ.host, auth_token: current_authorized_token.id }, class: 'button is-primary') do %>
+<%= link_to({ controller: 'ship/me/boxes', action: 'qrcode', id: @box.id, host: @box.organ.host, auth_token: Current.session.id }, class: 'button is-primary') do %>
   <span>物流箱管理</span>
 <% end if current_user.organ_ids.include?(@box.organ_id) %>
 <%= link_to({controller: 'ship/boxes', action: 'in_edit', id: @box.code }, class: 'button is-info') do %>
