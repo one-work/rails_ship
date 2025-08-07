@@ -5,14 +5,14 @@
   <span><%= model.line.finish_name %></span>
 </td>
 <td>
-  <%= link_to({ controller: 'line_stations', line_id: model.line_id }, aria: { label: t('ship.admin.line_stations.index.title') }, class: 'button is-small is-rounded is-light') do %>
+  <%= link_to({ controller: 'line_stations', line_id: model.line_id }, aria: { label: t('ship.admin.line_stations.index.title') }, class: 'button is-small is-borderless') do %>
     <span><%= model.position %></span>
     <span class="text-grey">/</span>
     <span><%= model.line.line_stations_count %></span>
   <% end %>
 </td>
 <td>
-  <%= link_to({ action: 'shipments', line_id: model.line_id }, class: 'button is-small is-rounded is-light') do %>
+  <%= link_to({ action: 'shipments', line_id: model.line_id }, class: 'button is-small is-borderless') do %>
     <i class="fa-solid fa-list"></i>
     <span class="pl-1"><%= t('ship.admin.shipments.index.title') %></span>
   <% end %>

@@ -6,7 +6,7 @@
   <p><%= model.box_specification.measure %></p>
 </td>
 <td>
-  <%= link_to({ controller: 'boxes', box_host_id: model.id }, aria: { label: t('ship.panel.boxes.index.title') }, class: 'button is-small is-rounded is-light') do %>
+  <%= link_to({ controller: 'boxes', box_host_id: model.id }, aria: { label: t('ship.panel.boxes.index.title') }, class: 'button is-small is-borderless') do %>
     <i class="fa-solid fa-boxes-stacked"></i>
     <span class="pl-1"><%= model.boxes_count %></span>
   <% end %>
@@ -34,26 +34,26 @@
 <td><%= (model.invest_ratio * 100).to_fs(:percentage, precision: 0) %></td>
 <td>
   <span><%= model.rent_unit_i18n %></span>
-  <%= link_to({ controller: 'trade/admin/rent_charges', rentable_type: model.base_class_name, rentable_id: model.id }, aria: { label: t('trade.admin.rent_charges.index.title') }, class: 'button is-small is-rounded is-light') do %>
+  <%= link_to({ controller: 'trade/admin/rent_charges', rentable_type: model.base_class_name, rentable_id: model.id }, aria: { label: t('trade.admin.rent_charges.index.title') }, class: 'button is-small is-borderless') do %>
     <i class="fa-solid fa-clock-rotate-left"></i>
   <% end %>
 </td>
 <td>
   <div data-show-target="item" class="visibility-hidden">
-    <%= link_to({ controller: 'box_proxy_sells', box_host_id: model.id }, aria: { label: t('ship.admin.box_proxy_sells.index.title') }, class: 'button is-small is-rounded is-light') do %>
+    <%= link_to({ controller: 'box_proxy_sells', box_host_id: model.id }, aria: { label: t('ship.admin.box_proxy_sells.index.title') }, class: 'button is-small is-borderless') do %>
       <i class="fa-solid fa-gavel text-danger"></i>
     <% end %>
-    <%= link_to({ controller: 'box_proxy_buys', box_host_id: model.id }, aria: { label: t('ship.admin.box_proxy_buys.index.title') }, class: 'button is-small is-rounded is-light') do %>
+    <%= link_to({ controller: 'box_proxy_buys', box_host_id: model.id }, aria: { label: t('ship.admin.box_proxy_buys.index.title') }, class: 'button is-small is-borderless') do %>
       <i class="fa-solid fa-handshake-simple text-success"></i>
     <% end %>
-    <%= link_to({ controller: 'box_holds', box_host_id: model.id }, aria: { label: t('ship.admin.box_holds.index.title') }, class: 'button is-small is-rounded is-light') do %>
+    <%= link_to({ controller: 'box_holds', box_host_id: model.id }, aria: { label: t('ship.admin.box_holds.index.title') }, class: 'button is-small is-borderless') do %>
       <i class="fa-solid fa-hand-holding text-info"></i>
     <% end %>
-    <%= button_to({ action: 'edit', id: model.id }, aria: { label: t('.edit.title') }, class: 'button is-small is-rounded is-light') do %>
-      <i class="fa-solid fa-pencil text-link"></i>
+    <%= button_to({ action: 'edit', id: model.id }, aria: { label: t('.edit.title') }, class: 'button is-small is-borderless') do %>
+      <%= svg_tag 'pencil', class: 'icon text-link' %>
     <% end %>
-    <%= button_to({ action: 'show', id: model.id }, aria: { label: t('.show.title') }, class: 'button is-small is-rounded is-light') do %>
-      <i class="fa-solid fa-circle-info text-info"></i>
+    <%= button_to({ action: 'show', id: model.id }, aria: { label: t('.show.title') }, class: 'button is-small is-borderless') do %>
+      <%= svg_tag 'circle-info', class: 'icon text-info' %>
     <% end %>
   </div>
 </td>

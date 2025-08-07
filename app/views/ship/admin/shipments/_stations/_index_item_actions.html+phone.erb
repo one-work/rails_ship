@@ -3,11 +3,11 @@
     <%= yield %>
   </div>
   <div class="weui-media-box__ft flex-direction-column justify-content-space-evenly">
-    <%= link_to({ action: 'loaded', from_station_id: model.station_id }, class: 'button is-small is-rounded is-light') do %>
+    <%= link_to({ action: 'loaded', from_station_id: model.station_id }, class: 'button is-small is-borderless') do %>
       <i class="fa-solid fa-person-dolly text-success"></i>
       <span class="pl-1"><%= t('ship.admin.shipments.loaded.title') %></span>
     <% end if current_organ.station_ids.include?(model.station_id) && !model.last? %>
-    <%= link_to({ action: 'unloaded', station_id: model.station_id }, class: 'button is-small is-rounded is-light') do %>
+    <%= link_to({ action: 'unloaded', station_id: model.station_id }, class: 'button is-small is-borderless') do %>
       <i class="fa-solid fa-person-dolly-empty text-danger"></i>
       <span class="pl-1"><%= t('ship.admin.shipments.unloaded.title') %></span>
     <% end if current_organ.station_ids.include?(model.station_id) && !model.first? %>

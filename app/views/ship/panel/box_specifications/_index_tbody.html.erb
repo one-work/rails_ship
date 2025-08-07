@@ -7,21 +7,21 @@
 <td><%= model.measure %></td>
 <td>
   <div data-show-target="item" class="visibility-hidden">
-    <%= link_to({ controller: 'boxes', box_specification_id: model.id }, aria: { label: t('ship.panel.boxes.index.title') }, class: 'button is-small is-rounded is-light') do %>
+    <%= link_to({ controller: 'boxes', box_specification_id: model.id }, aria: { label: t('ship.panel.boxes.index.title') }, class: 'button is-small is-borderless') do %>
       <i class="fa-solid fa-boxes-stacked"></i>
       <span class="pl-1"><%= model.boxes_count %></span>
     <% end %>
-    <%= link_to({ controller: 'box_hosts', box_specification_id: model.id }, aria: { label: t('ship.panel.box_hosts.index.title') }, class: 'button is-small is-rounded is-light') do %>
+    <%= link_to({ controller: 'box_hosts', box_specification_id: model.id }, aria: { label: t('ship.panel.box_hosts.index.title') }, class: 'button is-small is-borderless') do %>
       <i class="fa-solid fa-building"></i>
     <% end %>
-    <%= button_to({ action: 'show', id: model.id }, aria: { label: t('.show.title') }, class: 'button is-small is-rounded is-light') do %>
-      <i class="fa-solid fa-circle-info"></i>
+    <%= button_to({ action: 'show', id: model.id }, aria: { label: t('.show.title') }, class: 'button is-small is-borderless') do %>
+      <%= svg_tag 'circle-info', class: 'icon text-info' %>
     <% end %>
-    <%= button_to({ action: 'edit', id: model.id }, aria: { label: t('.edit.title') }, class: 'button is-small is-rounded is-light') do %>
+    <%= button_to({ action: 'edit', id: model.id }, aria: { label: t('.edit.title') }, class: 'button is-small is-borderless') do %>
       <i class="fa-solid fa-pencil"></i>
     <% end %>
-    <%= button_to({ action: 'destroy', id: model.id }, method: :delete, aria: { label: t('.destroy.title') }, class: 'button is-small is-rounded is-light', form: { data: { turbo_confirm: t('.destroy.confirm') } }) do %>
-      <i class="fa-solid fa-trash"></i>
+    <%= button_to({ action: 'destroy', id: model.id }, method: :delete, aria: { label: t('.destroy.title') }, class: 'button is-small is-borderless', form: { data: { turbo_confirm: t('.destroy.confirm') } }) do %>
+      <%= svg_tag 'trash', class: 'icon' %>
     <% end %>
   </div>
 </td>

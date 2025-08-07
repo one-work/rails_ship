@@ -8,7 +8,7 @@
 </td>
 <td><%= model[0].station&.name %></td>
 <td>
-  <%= link_to({ controller: 'items', action: 'packable', address_id: model[0].id }, aria: { label: t('ship.admin.items.index.title') }, class: 'button is-small is-rounded is-light') do %>
+  <%= link_to({ controller: 'items', action: 'packable', address_id: model[0].id }, aria: { label: t('ship.admin.items.index.title') }, class: 'button is-small is-borderless') do %>
     <i class="fa-solid fa-dolly"></i>
     <span class="pl-1"><%= model[1].size %></span>
   <% end %>

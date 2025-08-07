@@ -1,7 +1,7 @@
 <td><%= model.name %></td>
 <td><%= model.measure %></td>
 <td>
-  <%= link_to({ controller: 'boxes', box_specification_id: model.id }, aria: { label: t('ship.admin.boxes.index.title') }, class: 'button is-small is-rounded is-light') do %>
+  <%= link_to({ controller: 'boxes', box_specification_id: model.id }, aria: { label: t('ship.admin.boxes.index.title') }, class: 'button is-small is-borderless') do %>
     <i class="fa-solid fa-boxes-stacked"></i>
     <span class="pl-1"><%= model.boxes_count %></span>
   <% end %>

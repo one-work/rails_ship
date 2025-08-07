@@ -2,10 +2,10 @@
 
   <td>
     <div data-show-target="item" class="visibility-hidden">
-      <%= link_to({ action: 'loaded', from_station_id: model.station_id }, aria: { label: t('ship.admin.shipments.loaded.title') }, class: 'button is-small is-rounded is-light') do %>
+      <%= link_to({ action: 'loaded', from_station_id: model.station_id }, aria: { label: t('ship.admin.shipments.loaded.title') }, class: 'button is-small is-borderless') do %>
         <i class="fa-solid fa-person-dolly text-success"></i>
       <% end if current_organ.station_ids.include?(model.station_id) && !model.last? %>
-      <%= link_to({ action: 'unloaded', station_id: model.station_id }, aria: { label: t('ship.admin.shipments.unloaded.title') }, class: 'button is-small is-rounded is-light') do %>
+      <%= link_to({ action: 'unloaded', station_id: model.station_id }, aria: { label: t('ship.admin.shipments.unloaded.title') }, class: 'button is-small is-borderless') do %>
         <i class="fa-solid fa-person-dolly-empty text-danger"></i>
       <% end if current_organ.station_ids.include?(model.station_id) && !model.first? %>
     </div>

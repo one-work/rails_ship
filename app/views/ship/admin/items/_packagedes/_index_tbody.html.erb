@@ -10,7 +10,7 @@
 </td>
 <td><%= model[0].station&.name %></td>
 <td>
-  <%= link_to({ controller: 'items', action: 'packaged', address_id: model[0].id }, aria: { label: t('ship.admin.trade_items.index.title') }, class: 'button is-small is-rounded is-light') do %>
+  <%= link_to({ controller: 'items', action: 'packaged', address_id: model[0].id }, aria: { label: t('ship.admin.trade_items.index.title') }, class: 'button is-small is-borderless') do %>
     <i class="fa-regular fa-dolly"></i>
     <span class="pl-1"><%= model[1] %></span>
   <% end %>
