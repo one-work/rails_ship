@@ -1,0 +1,17 @@
+<div class="fixed-grid has-6-cols">
+  <div class="grid">
+    <%= link_to({ controller: 'ship/panel/areas' }, data: { turbo_frame: 'body', action: 'menu-popup#enter' }, class: 'cell button is-fullwidth') do %>
+      <span><%= t('ship.panel.areas.index.title') %></span>
+    <% end %>
+    <%= link_to({ controller: 'ship/panel/lines' }, data: { turbo_frame: 'body', action: 'menu-popup#enter' }, class: active_helper(controllers: ['lines', 'similars'], item: 'cell button is-fullwidth', active: 'cell button is-fullwidth is-active')) do %>
+      <span><%= t('ship.panel.lines.index.title') %></span>
+    <% end %>
+    <%= link_to({ controller: 'ship/panel/stations' }, data: { turbo_frame: 'body', action: 'menu-popup#enter' }, class: active_helper(controllers: ['stations'], item: 'cell button is-fullwidth', active: 'cell button is-fullwidth is-active')) do %>
+      <span><%= t('ship.panel.stations.index.title') %></span>
+    <% end %>
+    <%= link_to({ controller: 'ship/panel/box_specifications' }, data: { turbo_frame: 'body', action: 'menu-popup#enter' }, class: active_helper(controllers: ['box_specifications', 'boxes'], item: 'cell button is-fullwidth', active: 'cell button is-fullwidth is-active')) do %>
+      <span><%= t('ship.panel.box_specifications.index.title') %></span>
+    <% end %>
+  </div>
+</div>
+
