@@ -37,7 +37,7 @@
       <i class="fa-solid fa-pencil"></i>
     <% end if model.organ_id == current_organ.id %>
     <%= button_to({ action: 'destroy', id: model.id }, method: :delete, aria: { label: t('.destroy.title') }, class: 'button is-small is-borderless', form: { data: { turbo_confirm: t('.destroy.confirm') } }) do %>
-      <%= svg_tag 'trash', class: 'icon' %>
+      <%= svg_tag 'trash' %>
     <% end if model.organ_id == current_organ.id %>
   </div>
 </td>
