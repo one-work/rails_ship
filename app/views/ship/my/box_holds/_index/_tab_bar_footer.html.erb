@@ -1,10 +1,10 @@
 <div class="buttons as-bottom">
   <%= link_to({ controller: '/ship/box_hosts' }, class: 'button is-small is-primary') do %>
-    <i class="fa-solid fa-plus"></i>
+    <%= svg_tag 'plus' %>
     <span class="pl-1"><%= t('ship.box_hosts.index.title') %></span>
   <% end %>
   <%= link_to({ controller: '/ship/box_hosts', action: 'rent' }, class: 'button is-small is-danger') do %>
-    <i class="fa-solid fa-plus"></i>
+    <%= svg_tag 'plus' %>
     <span class="pl-1"><%= t('ship.box_hosts.rent.title') %></span>
   <% end %>
 </div>
