@@ -1,13 +1,13 @@
 <% if params[:station_id] %>
   <th class="text-left">
     <%= link_to({ action: 'station', station_id: params[:station_id] }, class: 'button is-borderless') do %>
-      <i class="fa-solid fa-lg fa-fw-1 fa-angle-left"></i>
+      <%= svg_tag 'angle-left' %>
     <% end %>
   </th>
 <% else %>
   <th class="text-left">
     <%= link_to({ action: 'index' }, class: 'button is-borderless') do %>
-      <i class="fa-solid fa-lg fa-fw-1 fa-angle-left"></i>
+      <%= svg_tag 'angle-left' %>
     <% end %>
   </th>
 <% end %>

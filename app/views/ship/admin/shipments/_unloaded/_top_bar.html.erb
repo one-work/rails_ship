@@ -1,11 +1,11 @@
 <div class="box as-bar">
   <% if params[:from] == 'station' %>
     <%= link_to({ controller: 'stations', action: 'shipments', id: params[:station_id] }, class: 'px-4') do %>
-      <i class="fa-solid fa-lg fa-fw-1 fa-angle-left"></i>
+      <%= svg_tag 'angle-left' %>
     <% end %>
   <% else %>
     <%= link_to({ action: 'stations' }, class: 'px-4') do %>
-      <i class="fa-solid fa-lg fa-fw-1 fa-angle-left"></i>
+      <%= svg_tag 'angle-left' %>
     <% end %>
   <% end %>
   <div class="weui-title">

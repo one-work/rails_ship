@@ -1,7 +1,7 @@
 <div class="box is-padding-less">
   <div class="box-header as-bar pt-0">
     <%= link_to(params[:return_to], class: 'px-4') do %>
-      <i class="fa-solid fa-lg fa-fw-1 fa-angle-left"></i>
+      <%= svg_tag 'angle-left' %>
     <% end %>
     <div class="weui-title"><%= t('.title') %></div>
     <i style="width: 3rem"></i>
