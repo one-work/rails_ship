@@ -16,7 +16,7 @@ module Ship
       @address = current_user.addresses.build(station_id: params[:station_id])
       @address.area = Area.new
       @address.contact_person = current_user.name
-      @address.tel = current_account.identity if current_account.is_a?(Auth::MobileAccount)
+      @address.tel = current_account.identity if current_account.is_a?(Auth::Account)
     end
 
     def create
