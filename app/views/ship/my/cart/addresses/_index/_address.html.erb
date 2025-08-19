@@ -14,12 +14,14 @@
     <% end %>
     </span>
   </span>
-  <span data-controller="input" class="media-right flex">
+  <span data-controller="input" class="media-right text-centered">
     <% if model.id != @cart.address_id %>
-      <%= svg_tag 'check' %>
-      <span class="text-grey size-7">选为默认</span>
+      <%= svg_tag 'check', class: 'icon is-medium text-grey' %>
+      <p class="size-7 text-grey">选为默认</p>
+    <% else %>
+      <%= svg_tag 'check', class: 'icon is-medium text-success' %>
+      <p class="size-7 text-success">默认</p>
     <% end %>
     <%= radio_button_tag 'cart[address_id]', model.id, model.id == @cart.address_id, data: { action: 'input#form' }, form: 'cart_address_form', class: 'toggle-check' %>
-    <%= svg_tag 'check', class: 'icon is-small text-success' %>
   </span>
 </label>
