@@ -8,8 +8,8 @@
       <%= link_to({ controller: 'packages', action: 'address', address_id: model[0].id }, aria: { label: t('ship.admin.packages.index.title') }, class: 'button is-small is-borderless') do %>
         <i class="fa-regular fa-box"></i>
       <% end %>
-      <%= link_to({ action: 'edit', id: model[0].id }, data: { turbo_frame: 'modal' }, class: 'button is-small is-borderless') do %>
-        <i class="fa-solid fa-pencil"></i>
+      <%= button_to({ action: 'edit', id: model[0].id }, class: 'button is-small is-borderless') do %>
+        <%= svg_tag 'pencil' %>
       <% end %>
     </div>
   </td>

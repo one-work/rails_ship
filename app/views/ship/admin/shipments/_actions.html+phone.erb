@@ -3,7 +3,7 @@
   <span><%= t('.destroy.title') %></span>
 <% end if model.organ_id == current_organ.id %>
 <%= button_to({ action: 'edit', id: model.id }, class: 'cell') do %>
-  <i class="fa-solid fa-pencil"></i>
+  <%= svg_tag 'pencil' %>
   <span><%= t('.edit.title') %></span>
 <% end if model.organ_id == current_organ.id %>
 <%= link_to({ action: 'show', id: model.id }, class: 'cell') do %>

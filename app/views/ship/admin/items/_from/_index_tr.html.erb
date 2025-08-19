@@ -9,7 +9,7 @@
         <%= svg_tag 'circle-info', class: 'icon text-info' %>
       <% end %>
       <%= link_to({ action: 'edit', id: model[0].id }, data: { turbo_frame: 'modal' }, class: 'button is-small is-borderless') do %>
-        <i class="fa-solid fa-pencil"></i>
+        <%= svg_tag 'pencil' %>
       <% end %>
     </div>
   </td>
