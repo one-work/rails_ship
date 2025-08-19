@@ -19,6 +19,6 @@
       <span class="text-grey size-7">选为默认</span>
     <% end %>
     <%= radio_button_tag 'cart[address_id]', model.id, model.id == @cart.address_id, data: { action: 'input#form' }, form: 'cart_address_form', class: 'toggle-check' %>
-    <i class="fa-solid fa-check text-success"></i>
+    <%= svg_tag 'check', class: 'icon is-small text-success' %>
   </span>
 </label>

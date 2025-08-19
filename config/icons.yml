@@ -1,4 +1,6 @@
 regular:
   - angle-left
   - angle-right
+  - check
   - truck
+  - xmark
