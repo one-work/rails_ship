@@ -73,7 +73,7 @@ module Ship
     def wechat
       # uniq 解决['上海市', '上海市'] 的问题
       area = Area.sure_find [params['provinceName'], params['cityName'], params['countyName']].reject(&:blank?).uniq
-      cached_key = [area.id, address_params[:detail], address_params[:contact], address_params[:tel]].join(',')
+      cached_key = [area.id, address_params[:detail], address_params[:contact_person], address_params[:tel]].join(',')
 
       @address = current_user.addresses.find_or_initialize_by(cached_key: cached_key)
       @address.assign_attributes address_params
