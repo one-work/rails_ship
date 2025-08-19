@@ -1,4 +1,4 @@
-<label class="media" for="cart_address_id_<%= model.id %>">
+<label class="media as-boxed" for="cart_address_id_<%= model.id %>">
   <span class="media-content has-column-normal">
     <span>
       <span><%= model.contact_person %></span>
@@ -16,6 +16,7 @@
   </span>
   <span data-controller="input" class="media-right flex">
     <% if model.id != @cart.address_id %>
+      <%= svg_tag 'check' %>
       <span class="text-grey size-7">选为默认</span>
     <% end %>
     <%= radio_button_tag 'cart[address_id]', model.id, model.id == @cart.address_id, data: { action: 'input#form' }, form: 'cart_address_form', class: 'toggle-check' %>
