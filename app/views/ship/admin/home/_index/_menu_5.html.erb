@@ -8,19 +8,19 @@
       <%= link_to({ controller: 'ship/admin/addresses' }, class: 'weui-cell weui-cell_active weui-cell_access') do %>
         <div class="media-content"><%= t('ship.admin.addresses.index.title') %></div>
         <div class="media-right">
-          <i class="fa-solid fa-chevron-right"></i>
+          <%= svg_tag 'chevron-right' %>
         </div>
       <% end %>
       <%= link_to({ controller: 'ship/admin/trade_items' }, class: 'weui-cell weui-cell_active weui-cell_access') do %>
         <div class="media-content"><%= t('ship.admin.trade_items.index.title') %></div>
         <div class="weui-cell__ft">
-          <i class="fa-solid fa-chevron-right"></i>
+          <%= svg_tag 'chevron-right' %>
         </div>
       <% end %>
       <%= link_to({ controller: 'ship/admin/packages' }, class: 'weui-cell weui-cell_active weui-cell_access') do %>
         <div class="media-content"><%= t('ship.admin.packages.index.title') %></div>
         <div class="weui-cell__ft">
-          <i class="fa-solid fa-chevron-right"></i>
+          <%= svg_tag 'chevron-right' %>
         </div>
       <% end %>
     </div>

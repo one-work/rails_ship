@@ -8,19 +8,19 @@
       <%= link_to({ controller: 'addresses' }, class: 'weui-cell weui-cell_active weui-cell_access') do %>
         <div class="media-content"><%= t('.addresses.index.title') %></div>
         <div class="media-right">
-          <i class="fa-solid fa-chevron-right"></i>
+          <%= svg_tag 'chevron-right' %>
         </div>
       <% end %>
       <%= link_to({ controller: 'items' }, class: 'weui-cell weui-cell_active weui-cell_access') do %>
         <div class="media-content"><%= t('.trade_items.index.title') %></div>
         <div class="weui-cell__ft">
-          <i class="fa-solid fa-chevron-right"></i>
+          <%= svg_tag 'chevron-right' %>
         </div>
       <% end %>
       <%= link_to({ controller: 'packages' }, class: 'weui-cell weui-cell_active weui-cell_access') do %>
         <div class="media-content"><%= t('.packages.index.title') %></div>
         <div class="weui-cell__ft">
-          <i class="fa-solid fa-chevron-right"></i>
+          <%= svg_tag 'chevron-right' %>
         </div>
       <% end %>
     </div>

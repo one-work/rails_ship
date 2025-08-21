@@ -12,7 +12,7 @@
     <%= link_to({ action: 'new', station_id: model.id, return_to: params[:return_to] }, class: 'media') do %>
       <div class="media-content">完善地址</div>
       <div class="media-right">
-        <i class="fa-solid fa-chevron-right"></i>
+        <%= svg_tag 'chevron-right' %>
       </div>
     <% end %>
   </div>

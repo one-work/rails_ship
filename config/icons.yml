@@ -2,6 +2,8 @@ regular:
   - angle-left
   - angle-right
   - check
+  - check-double
+  - chevron-right
   - pencil
   - truck
   - xmark
