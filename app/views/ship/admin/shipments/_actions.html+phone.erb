@@ -7,7 +7,7 @@
   <span><%= t('.edit.title') %></span>
 <% end if model.organ_id == current_organ.id %>
 <%= link_to({ action: 'show', id: model.id }, class: 'cell') do %>
-  <%= svg_tag 'circle-info', class: 'icon text-info' %>
+  <%= svg_tag 'eye', class: 'icon text-info' %>
   <span><%= t('.show.title') %></span>
 <% end %>
 <%= link_to({ controller: 'shipment_items', shipment_id: model.id }, class: 'cell') do %>

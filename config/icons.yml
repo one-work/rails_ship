@@ -4,6 +4,8 @@ regular:
   - check
   - check-double
   - chevron-right
+  - eye
   - pencil
+  - trash
   - truck
   - xmark
