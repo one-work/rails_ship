@@ -13,16 +13,16 @@
   </span>
   <span class="tag ml-4">
     <i class="fa-solid fa-list"></i>
-    <span class="pl-1"><%= model.shipment_items_count %></span>
+    <span class="ml-1"><%= model.shipment_items_count %></span>
   </span>
 </p>
 <p class="flex align-items-center mt-1">
   <span>
     <i class="fa-solid fa-car"></i>
-    <span class="pl-1"><%= model.car.number %></span>
+    <span class="ml-1"><%= model.car.number %></span>
   </span>
   <span class="tag is-light ml-4">
-    <i class="fa-solid fa-user"></i>
-    <span class="pl-1"><%= model.driver.name %></span>
+    <%= svg_tag 'user' %>
+    <span class="ml-1"><%= model.driver.name %></span>
   </span>
 </p>
