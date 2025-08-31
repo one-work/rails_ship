@@ -4,6 +4,7 @@ regular:
   - check
   - check-double
   - chevron-right
+  - ellipsis-vertical
   - eye
   - magnifying-glass
   - pencil

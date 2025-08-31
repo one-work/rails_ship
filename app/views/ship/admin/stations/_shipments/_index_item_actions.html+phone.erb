@@ -4,7 +4,7 @@
   </div>
   <div class="media-right">
     <%= button_to({ controller: '/com/common', action: 'actions' }, params: params.to_meta.merge!(station_id: params[:id], line_id: model.line_id, id: model.id, model: model.base_class_name), class: 'button is-borderless') do %>
-      <i class="fa-solid fa-lg fa-ellipsis-h"></i>
+      <%= svg_tag 'ellipsis-vertical' %>
     <% end %>
   </div>
 </div>

@@ -13,6 +13,6 @@
 <% end %>
 <th class="text-right">
   <%= button_to({ action: 'actions', station_id: params[:station_id] }, class: 'button is-borderless') do %>
-    <i class="fa-solid fa-lg fa-ellipsis-h"></i>
+    <%= svg_tag 'ellipsis-vertical' %>
   <% end %>
 </th>
