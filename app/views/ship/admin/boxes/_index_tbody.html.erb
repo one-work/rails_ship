@@ -18,7 +18,7 @@
 <td>
   <div data-show-target="item" class="visibility-hidden">
     <button class="button is-small is-borderless" data-controller="print" data-print-url-value="<%= url_for(action: 'pdf', id: model.id) %>" data-action="print#doPrint">
-      <i class="fa-solid fa-print"></i>
+      <%= svg_tag 'print' %>
     </button>
     <%= link_to({ controller: 'box_logs', box_id: model.id }, aria: { label: t('.box_logs.index.title') }, class: 'button is-small is-borderless') do %>
       <i class="fa-solid fa-clock-rotate-left"></i>
