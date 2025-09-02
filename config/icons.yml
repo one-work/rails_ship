@@ -1,6 +1,7 @@
 regular:
   - angle-left
   - angle-right
+  - arrow-right
   - check
   - check-double
   - chevron-right
