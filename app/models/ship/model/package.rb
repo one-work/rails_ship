@@ -76,7 +76,7 @@ module Ship
       trade_items.each do |trade_item|
         cpcl.text "#{trade_item.good_name} #{trade_item.number}"
       end
-      cpcl.right_qrcode(enter_url)
+      cpcl.qrcode_right(enter_url)
       cpcl.render
     end
 
