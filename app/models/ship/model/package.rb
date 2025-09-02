@@ -68,7 +68,7 @@ module Ship
     def to_cpcl
       cpcl = BaseCpcl.new
       cpcl.text "#{from_station&.name || from_address&.area&.full_name} -> #{station&.name || address&.area&.full_name}"
-      cpcl.bold_text "#{address.contact}", font: 7, size: 1, line_add: false
+      cpcl.text_bold "#{address.contact}", font: 7, size: 1, line_add: false
       cpcl.text "#{address.tel}", x: 24 * (address.contact.size + 1)
       cpcl.text "#{address.area.full_name} #{address.detail}"
       cpcl.line
