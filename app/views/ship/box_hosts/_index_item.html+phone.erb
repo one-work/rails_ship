@@ -8,7 +8,7 @@
     </div>
   <% elsif model.held_user_id || model.held_organ_id %>
     <div class="tags has-addons is-inline-flex">
-      <span class="tag is-primary"><i class="fa-solid fa-check"></i></span>
+      <span class="tag is-primary"><%= svg_tag 'check' %></span>
       <span class="tag">已售</span>
     </div>
   <% end %>
