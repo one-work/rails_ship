@@ -11,17 +11,17 @@
       <%= link_to({ action: 'all', id: model }, class: '') do %>
         <i class="fa-regular fa-clone text-primary"></i>
         <span class="text-grey-dark size-7 pl-0"><%= Ship::BoxHost.human_attribute_name(:boxes_count) %></span>
-        <span class="text-weight-medium text-danger-dark is-family-zhushi"><%= model.boxes_count %></span>
+        <span class="text-weight-medium text-danger-dark"><%= model.boxes_count %></span>
       <% end %>
       <%= link_to({ action: 'rentable', id: model }, class: '') do %>
         <i class="fa-regular fa-thumbs-up text-primary"></i>
         <span class="text-grey-dark size-7 pl-0"><%= Ship::BoxHost.human_attribute_name(:tradable_count) %></span>
-        <span class="text-weight-medium text-danger-dark is-family-zhushi"><%= model.tradable_count %></span>
+        <span class="text-weight-medium text-danger-dark"><%= model.tradable_count %></span>
       <% end %>
       <%= link_to({ action: 'rented', id: model }, class: '') do %>
         <i class="fa-regular fa-handshake text-primary"></i>
         <span class="text-grey-dark size-7 pl-0"><%= Ship::BoxHost.human_attribute_name(:traded_count) %></span>
-        <span class="text-weight-medium text-danger-dark is-family-zhushi"><%= model.traded_count %></span>
+        <span class="text-weight-medium text-danger-dark"><%= model.traded_count %></span>
       <% end %>
     </div>
   </div>
