@@ -2,6 +2,7 @@ regular:
   - angle-left
   - angle-right
   - arrow-right
+  - bars
   - check
   - check-double
   - chevron-right
@@ -12,4 +13,5 @@ regular:
   - print
   - trash
   - truck
+  - users
   - xmark
