@@ -15,3 +15,5 @@ light:
   - truck
   - users
   - xmark
+regular:
+  - angle-left
