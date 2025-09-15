@@ -6,11 +6,18 @@ light:
   - check
   - check-double
   - chevron-right
+  - credit-card
   - ellipsis-vertical
   - eye
+  - list
+  - location-dot
   - magnifying-glass
   - pencil
+  - person-dolly
+  - person-dolly-empty
+  - play
   - print
+  - stop
   - trash
   - truck
   - users

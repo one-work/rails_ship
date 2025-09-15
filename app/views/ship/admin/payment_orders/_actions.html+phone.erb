@@ -1,8 +1,8 @@
 <%= link_to({ action: 'show', id: model.id, station_id: params[:station_id] }, class: 'cell') do %>
-  <%= svg_tag 'eye', class: 'icon text-info' %>
+  <%= svg_tag 'eye' %>
   <span><%= t('.show.title') %></span>
 <% end %>
 <%= link_to({ action: 'payment_new', id: model.id, station_id: params[:station_id] }, class: 'cell') do %>
-  <i class="fa-solid fa-credit-card"></i>
-  <span><%= t('ship.admin.payment_orders.payment_new.title') %></span>
+  <%= svg_tag 'credit-card' %>
+  <span><%= t('.payment_orders.payment_new.title') %></span>
 <% end if ['init'].include?(model.state) %>

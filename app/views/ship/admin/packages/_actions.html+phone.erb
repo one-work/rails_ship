@@ -11,11 +11,11 @@
   <span><%= t('.show.title') %></span>
 <% end %>
 <%= link_to({ action: 'shipment_items', id: model.id }, class: 'cell') do %>
-  <i class="fa-solid fa-person-dolly text-success"></i>
+  <%= svg_tag 'person-dolly' %>
   <span class="pl-1"><%= model.state_i18n %></span>
   <span class="pl-1"><%= model.shipment_items_count %></span>
 <% end %>
 <%= link_to({ controller: 'packageds', package_id: model.id }, class: 'cell') do %>
-  <i class="fa-solid fa-list"></i>
-  <span class="pl-1"><%= model.packageds_count %></span>
+  <%= svg_tag 'list' %>
+  <span><%= model.packageds_count %></span>
 <% end %>

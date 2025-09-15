@@ -1,24 +1,24 @@
-<%= link_to({ controller: 'ship/admin/shipment_items', line_id: model.line_id, shipment_id: model.id, station_id: params[:station_id] }, class: 'cell') do %>
-  <i class="fa-regular fa-list-check"></i>
-  <span><%= t('ship.admin.shipment_items.index.title') %></span>
+<%= link_to({ controller: 'shipment_items', line_id: model.line_id, shipment_id: model.id, station_id: params[:station_id] }, class: 'cell') do %>
+  <%= svg_tag 'list-check' %>
+  <span><%= t('.shipment_items.index.title') %></span>
 <% end %>
-<%= link_to({ controller: 'ship/admin/payment_orders', action: 'station', line_id: model.line_id, shipment_id: model.id, station_id: params[:station_id] }, class: 'cell') do %>
-  <i class="fa-regular fa-credit-card"></i>
-  <span><%= t('ship.admin.payment_orders.index.title') %></span>
+<%= link_to({ controller: 'payment_orders', action: 'station', line_id: model.line_id, shipment_id: model.id, station_id: params[:station_id] }, class: 'cell') do %>
+  <%= svg_tag 'credit-card' %>
+  <span><%= t('.payment_orders.index.title') %></span>
 <% end %>
 <%= button_to({ controller: 'ship/admin/shipments', action: 'leave', line_id: model.line_id, station_id: params[:station_id], id: model.id }, form: { data: { turbo_confirm: t('.leave.confirm') }, class: 'cell' }) do %>
-  <i class="fa-solid fa-play text-danger"></i>
-  <span class="text-danger"><%= t('ship.admin.shipments.leave.title') %></span>
+  <%= svg_tag 'play' %>
+  <span class="text-danger"><%= t('shipments.leave.title') %></span>
 <% end if model.line_stations.pluck(:station_id).last.to_s != params[:station_id] && ['left'].exclude?(model.state) %>
-<%= button_to({ controller: 'ship/admin/shipments', action: 'arrive', line_id: model.line_id, station_id: params[:station_id], id: model.id }, form: { data: { turbo_confirm: t('.arrive.confirm') }, class: 'cell' }) do %>
-  <i class="fa-solid fa-stop text-success"></i>
-  <span class="text-success"><%= t('ship.admin.shipments.arrive.title') %></span>
+<%= button_to({ controller: 'shipments', action: 'arrive', line_id: model.line_id, station_id: params[:station_id], id: model.id }, form: { data: { turbo_confirm: t('.arrive.confirm') }, class: 'cell' }) do %>
+  <%= svg_tag 'stop' %>
+  <span class="text-success"><%= t('.shipments.arrive.title') %></span>
 <% end if model.state == 'left' %>
-<%= link_to({ controller: 'ship/admin/shipments', action: 'loaded', line_id: model.line_id, id: model.id, from_station_id: params[:station_id], from: 'station' }, class: 'cell') do %>
-  <i class="fa-solid fa-person-dolly text-success"></i>
-  <span><%= t('ship.admin.shipments.loaded.title') %></span>
+<%= link_to({ controller: 'shipments', action: 'loaded', line_id: model.line_id, id: model.id, from_station_id: params[:station_id], from: 'station' }, class: 'cell') do %>
+  <%= svg_tag 'person-dolly' %>
+  <span><%= t('.shipments.loaded.title') %></span>
 <% end if model.line_stations.pluck(:station_id).last.to_s != params[:station_id] %>
 <%= link_to({ controller: 'ship/admin/shipments', action: 'unloaded', line_id: model.line_id, id: model.id, station_id: params[:station_id], from: 'station' }, class: 'cell') do %>
-  <i class="fa-solid fa-person-dolly-empty text-danger"></i>
-  <span><%= t('ship.admin.shipments.unloaded.title') %></span>
+  <%= svg_tag 'person-dolly-empty' %>
+  <span><%= t('.shipments.unloaded.title') %></span>
 <% end if model.line_stations.pluck(:station_id).first.to_s != params[:station_id] %>

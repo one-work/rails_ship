@@ -7,22 +7,22 @@
   <span><%= t('.edit.title') %></span>
 <% end if model.organ_id == current_organ.id %>
 <%= link_to({ action: 'show', id: model.id }, class: 'cell') do %>
-  <%= svg_tag 'eye', class: 'icon text-info' %>
+  <%= svg_tag 'eye' %>
   <span><%= t('.show.title') %></span>
 <% end %>
 <%= link_to({ controller: 'shipment_items', shipment_id: model.id }, class: 'cell') do %>
-  <i class="fa-regular fa-list-check"></i>
-  <span><%= t('ship.admin.shipment_items.index.title') %></span>
+  <%= svg_tag 'list-check' %>
+  <span><%= t('.shipment_items.index.title') %></span>
 <% end %>
 <%= link_to({ action: 'stations', id: model.id }, class: 'cell') do %>
-  <i class="fa-solid fa-location-dot"></i>
-  <span><%= t('ship.admin.shipments.stations.title') %></span>
+  <%= svg_tag 'location-dot' %>
+  <span><%= t('.stations.title') %></span>
 <% end %>
 <%= link_to({ action: 'leave', id: model.id }, class: 'cell') do %>
-  <i class="fa-regular fa-play"></i>
-  <span><%= t('ship.admin.shipments.leave.title') %></span>
+  <%= svg_tag 'play' %>
+  <span><%= t('.leave.title') %></span>
 <% end %>
 <%= link_to({ action: 'arrive', id: model.id }, class: 'cell') do %>
-  <i class="fa-regular fa-stop"></i>
-  <span><%= t('ship.admin.shipments.arrive.title') %></span>
+  <%= svg_tag 'stop' %>
+  <span><%= t('.arrive.title') %></span>
 <% end if model.state == 'left' %>

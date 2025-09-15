@@ -1,13 +1,13 @@
 <%= link_to({ action: 'show', id: model.id }, class: 'cell') do %>
-  <%= svg_tag 'eye', class: 'icon text-info' %>
+  <%= svg_tag 'eye' %>
   <span><%= t('.show.title') %></span>
 <% end %>
 <%= link_to({ controller: 'line_stations', line_id: model.id }, class: 'cell') do %>
-  <i class="fa-solid fa-location-dot"></i>
-  <span class="pl-1"><%= t('ship.admin.line_stations.index.title') %></span>
+  <%= svg_tag 'location-dot' %>
+  <span><%= t('.line_stations.index.title') %></span>
   <span class="pl-1"><%= model.line_stations_count %></span>
 <% end %>
 <%= link_to({ controller: 'shipments', line_id: model.id }, class: 'cell') do %>
-  <i class="fa-regular fa-list"></i>
-  <span class="pl-1"><%= t('ship.admin.shipments.index.title') %></span>
+  <%= svg_tag 'list' %>
+  <span><%= t('ship.admin.shipments.index.title') %></span>
 <% end %>
