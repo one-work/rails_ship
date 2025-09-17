@@ -1,13 +1,13 @@
 <div>
   <dt><%= Ship::Address.human_attribute_name(:contact_person) %></dt>
   <dd>
-    <%= text_field_tag 'address[contact_person]', @address.contact_person, data: { single_input_target: 'input', action: 'click->single-input#prepare' } %>
+    <%= text_field_tag 'address[contact_person]', @address.contact_person, id: nil, class: 'input', form: 'bottom-area', enterKeyHint: 'done' %>
   </dd>
 </div>
 <div>
   <dt><%= Ship::Address.human_attribute_name(:detail) %></dt>
-  <dd data-controller="single-input" data-single-input-single-form-outlet="#bottom-area">
-    <%= text_area_tag 'address[detail]', @address.detail, data: { single_input_target: 'input', action: 'click->single-input#prepareArea' } %>
+  <dd>
+    <%= text_area_tag 'address[detail]', @address.detail, id: nil, class: 'textarea', data: { single_input_target: 'input' }, form: 'bottom-area', enterKeyHint: 'done' %>
   </dd>
 </div>
 <div>
