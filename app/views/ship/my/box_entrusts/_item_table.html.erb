@@ -3,7 +3,7 @@
     <span>委托买入</span>
     <%= link_to({ controller: 'items', box_hold_id: @box_hold.id }) do %>
       <span>更多</span>
-      <i class="fa-solid fa-chevron-right text-grey-lighter"></i>
+      <%= svg_tag 'chevron-right' %>
     <% end %>
   </div>
   <div class="weui-panel__bd">
