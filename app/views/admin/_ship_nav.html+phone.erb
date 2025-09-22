@@ -1,0 +1,13 @@
+<div class="box is-padding-less">
+  <div class="box-header">
+    <span class="size-7 has-border-left-primary"><%= t('ship.admin.title') %></span>
+  </div>
+  <div class="fixed-grid has-4-cols is-shadow p-3">
+    <div class="grid">
+      <%= link_to({ controller: 'ship/admin/items' }, class: 'cell has-column-centered') do %>
+        <%= svg_tag 'list', class: 'icon is-medium text-primary' %>
+        <div class="text-grey size-7 mt-1"><%= t('ship.admin.items.index.title') %></div>
+      <% end %>
+    </div>
+  </div>
+</div>
