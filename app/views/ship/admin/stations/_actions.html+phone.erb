@@ -3,7 +3,7 @@
   <span><%= t('.show.title') %></span>
 <% end %>
 <%= link_to({ action: 'shipments', id: model.id }, class: 'cell') do %>
-  <i class="fa-regular fa-list"></i>
+  <%= svg_tag 'list' %>
   <span><%= t('ship.admin.stations.shipments.title') %></span>
 <% end %>
 <%= link_to({ action: 'lines', id: model.id }, class: 'cell') do %>

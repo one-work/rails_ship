@@ -4,7 +4,7 @@
   </div>
   <div class="column is-half">
     <%= link_to({ controller: 'trade/my/carts', action: 'show', id: @cart.id }, class: 'button is-danger') do %>
-      <i class="fa-solid fa-cart-shopping"></i>
+      <%= svg_tag 'cart-shopping' %>
       <span><%= t('trade.my.carts.show.title') %></span>
     <% end %>
   </div>

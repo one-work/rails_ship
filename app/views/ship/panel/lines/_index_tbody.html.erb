@@ -6,8 +6,8 @@
 </td>
 <td>
   <%= link_to({ controller: 'line_stations', line_id: model.id }, aria: { label: t('ship.panel.line_stations.index.title') }, class: 'button is-small is-borderless') do %>
-    <i class="fa-solid fa-location-dot"></i>
-    <span class="pl-1"><%= model.line_stations_count %></span>
+    <%= svg_tag 'location-dot' %>
+    <span class="ml-1"><%= model.line_stations_count %></span>
   <% end %>
 </td>
 <td>

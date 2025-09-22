@@ -12,8 +12,8 @@
 </td>
 <td>
   <%= link_to({ controller: 'packageds', package_id: model.id }, class: 'tag') do %>
-    <i class="fa-solid fa-list"></i>
-    <span class="pl-1"><%= model.packageds_count %></span>
+    <%= svg_tag 'list' %>
+    <span class="ml-1"><%= model.packageds_count %></span>
   <% end %>
 </td>
 <td>

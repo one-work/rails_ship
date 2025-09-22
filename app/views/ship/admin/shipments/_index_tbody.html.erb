@@ -14,10 +14,10 @@
 <td>
   <div data-show-target="item" class="visibility-hidden">
     <%= link_to({ action: 'stations', id: model.id }, aria: { label: t('ship.admin.shipments.stations.title') }, class: 'button is-small is-borderless') do %>
-      <i class="fa-solid fa-location-dot"></i>
+      <%= svg_tag 'location-dot' %>
     <% end %>
     <%= link_to({ controller: 'shipment_items', shipment_id: model.id }, aria: { label: t('ship.admin.shipment_items.index.title') }, class: 'button is-small is-borderless') do %>
-      <i class="fa-regular fa-list-check"></i>
+      <%= svg_tag 'list' %>
     <% end %>
     <%= link_to({ controller: 'shipment_logs', shipment_id: model.id }, aria: { label: t('ship.admin.shipment_logs.index.title') }, class: 'button is-small is-borderless') do %>
       <i class="fa-regular fa-clock-rotate-left"></i>

@@ -4,8 +4,8 @@
     <th><%= @cart.amount.to_money.format.html_safe %></th>
     <th class="text-centered">
       <%= link_to({ controller: 'ship/in/orders', action: 'new', current_cart_id: @cart.id }, class: 'button is-success') do %>
-        <i class="fa-solid fa-credit-card"></i>
-        <span class="pl-1"><%= t('ship.in.orders.new.title') %></span>
+        <%= svg_tag 'credit-card' %>
+        <span class="ml-1"><%= t('ship.in.orders.new.title') %></span>
       <% end %>
     </th>
     <th></th>
