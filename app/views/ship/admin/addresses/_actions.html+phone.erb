@@ -1,12 +1,12 @@
-<%= link_to({ controller: 'packages', action: 'address', address_id: model.id }, class: 'cell') do %>
-  <i class="fa-regular fa-box"></i>
-  <span><%= t('ship.admin.packages.index.title') %></span>
+<%= link_to({ controller: 'packages', action: 'address', address_id: model.id }, class: 'cell has-column-centered') do %>
+  <%= svg_tag 'box' %>
+  <span><%= t('.packages.index.title') %></span>
 <% end %>
-<%= link_to({ action: 'show', id: model.id }, class: 'cell') do %>
-  <%= svg_tag 'eye', class: 'icon text-info' %>
+<%= link_to({ action: 'show', id: model.id }, class: 'cell has-column-centered') do %>
+  <%= svg_tag 'eye' %>
   <span><%= t('.show.title') %></span>
 <% end %>
-<%= button_to({ action: 'edit', id: model.id }, class: 'cell') do %>
+<%= button_to({ action: 'edit', id: model.id }, class: 'cell has-column-centered') do %>
   <%= svg_tag 'pencil' %>
   <span><%= t('.edit.title') %></span>
 <% end %>

@@ -1,28 +1,28 @@
-<%= button_to({ action: 'destroy', id: model.id }, method: :delete, class: 'text-danger', form: { data: { turbo_confirm: t('.destroy.confirm') }, class: 'cell weui-actionsheet__cell_warn' }) do %>
+<%= button_to({ action: 'destroy', id: model.id }, method: :delete, form: { data: { turbo_confirm: t('.destroy.confirm') }, class: 'cell has-column-centered' }) do %>
   <%= svg_tag 'trash' %>
   <span><%= t('.destroy.title') %></span>
 <% end if model.organ_id == current_organ.id %>
-<%= button_to({ action: 'edit', id: model.id }, class: 'cell') do %>
+<%= button_to({ action: 'edit', id: model.id }, class: 'cell has-column-centered') do %>
   <%= svg_tag 'pencil' %>
   <span><%= t('.edit.title') %></span>
 <% end if model.organ_id == current_organ.id %>
-<%= link_to({ action: 'show', id: model.id }, class: 'cell') do %>
+<%= link_to({ action: 'show', id: model.id }, class: 'cell has-column-centered') do %>
   <%= svg_tag 'eye' %>
   <span><%= t('.show.title') %></span>
 <% end %>
-<%= link_to({ controller: 'shipment_items', shipment_id: model.id }, class: 'cell') do %>
+<%= link_to({ controller: 'shipment_items', shipment_id: model.id }, class: 'cell has-column-centered') do %>
   <%= svg_tag 'list-check' %>
   <span><%= t('.shipment_items.index.title') %></span>
 <% end %>
-<%= link_to({ action: 'stations', id: model.id }, class: 'cell') do %>
+<%= link_to({ action: 'stations', id: model.id }, class: 'cell has-column-centered') do %>
   <%= svg_tag 'location-dot' %>
   <span><%= t('.stations.title') %></span>
 <% end %>
-<%= link_to({ action: 'leave', id: model.id }, class: 'cell') do %>
+<%= link_to({ action: 'leave', id: model.id }, class: 'cell has-column-centered') do %>
   <%= svg_tag 'play' %>
   <span><%= t('.leave.title') %></span>
 <% end %>
-<%= link_to({ action: 'arrive', id: model.id }, class: 'cell') do %>
+<%= link_to({ action: 'arrive', id: model.id }, class: 'cell has-column-centered') do %>
   <%= svg_tag 'stop' %>
   <span><%= t('.arrive.title') %></span>
 <% end if model.state == 'left' %>

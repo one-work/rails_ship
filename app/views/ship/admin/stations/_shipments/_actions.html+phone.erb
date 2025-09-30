@@ -1,24 +1,24 @@
-<%= link_to({ controller: 'shipment_items', line_id: model.line_id, shipment_id: model.id, station_id: params[:station_id] }, class: 'cell') do %>
+<%= link_to({ controller: 'shipment_items', line_id: model.line_id, shipment_id: model.id, station_id: params[:station_id] }, class: 'cell has-column-centered') do %>
   <%= svg_tag 'list-check' %>
   <span><%= t('.shipment_items.index.title') %></span>
 <% end %>
-<%= link_to({ controller: 'payment_orders', action: 'station', line_id: model.line_id, shipment_id: model.id, station_id: params[:station_id] }, class: 'cell') do %>
+<%= link_to({ controller: 'payment_orders', action: 'station', line_id: model.line_id, shipment_id: model.id, station_id: params[:station_id] }, class: 'cell has-column-centered') do %>
   <%= svg_tag 'credit-card' %>
   <span><%= t('.payment_orders.index.title') %></span>
 <% end %>
-<%= button_to({ controller: 'ship/admin/shipments', action: 'leave', line_id: model.line_id, station_id: params[:station_id], id: model.id }, form: { data: { turbo_confirm: t('.leave.confirm') }, class: 'cell' }) do %>
+<%= button_to({ controller: 'ship/admin/shipments', action: 'leave', line_id: model.line_id, station_id: params[:station_id], id: model.id }, form: { data: { turbo_confirm: t('.leave.confirm') }, class: 'cell has-column-centered' }) do %>
   <%= svg_tag 'play' %>
   <span class="text-danger"><%= t('shipments.leave.title') %></span>
 <% end if model.line_stations.pluck(:station_id).last.to_s != params[:station_id] && ['left'].exclude?(model.state) %>
-<%= button_to({ controller: 'shipments', action: 'arrive', line_id: model.line_id, station_id: params[:station_id], id: model.id }, form: { data: { turbo_confirm: t('.arrive.confirm') }, class: 'cell' }) do %>
+<%= button_to({ controller: 'shipments', action: 'arrive', line_id: model.line_id, station_id: params[:station_id], id: model.id }, form: { data: { turbo_confirm: t('.arrive.confirm') }, class: 'cell has-column-centered' }) do %>
   <%= svg_tag 'stop' %>
   <span class="text-success"><%= t('.shipments.arrive.title') %></span>
 <% end if model.state == 'left' %>
-<%= link_to({ controller: 'shipments', action: 'loaded', line_id: model.line_id, id: model.id, from_station_id: params[:station_id], from: 'station' }, class: 'cell') do %>
+<%= link_to({ controller: 'shipments', action: 'loaded', line_id: model.line_id, id: model.id, from_station_id: params[:station_id], from: 'station' }, class: 'cell has-column-centered') do %>
   <%= svg_tag 'person-dolly' %>
   <span><%= t('.shipments.loaded.title') %></span>
 <% end if model.line_stations.pluck(:station_id).last.to_s != params[:station_id] %>
-<%= link_to({ controller: 'ship/admin/shipments', action: 'unloaded', line_id: model.line_id, id: model.id, station_id: params[:station_id], from: 'station' }, class: 'cell') do %>
+<%= link_to({ controller: 'ship/admin/shipments', action: 'unloaded', line_id: model.line_id, id: model.id, station_id: params[:station_id], from: 'station' }, class: 'cell has-column-centered') do %>
   <%= svg_tag 'person-dolly-empty' %>
   <span><%= t('.shipments.unloaded.title') %></span>
 <% end if model.line_stations.pluck(:station_id).first.to_s != params[:station_id] %>
