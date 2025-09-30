@@ -6,11 +6,11 @@
   <%= svg_tag 'credit-card' %>
   <span><%= t('.payment_orders.index.title') %></span>
 <% end %>
-<%= button_to({ controller: 'ship/admin/shipments', action: 'leave', line_id: model.line_id, station_id: params[:station_id], id: model.id }, form: { data: { turbo_confirm: t('.leave.confirm') }, class: 'cell has-column-centered' }) do %>
+<%= button_to({ controller: 'ship/admin/shipments', action: 'leave', line_id: model.line_id, station_id: params[:station_id], id: model.id }, form: { data: { turbo_confirm: t('.leave.confirm') } }, class: 'cell has-column-centered') do %>
   <%= svg_tag 'play' %>
   <span class="text-danger"><%= t('shipments.leave.title') %></span>
 <% end if model.line_stations.pluck(:station_id).last.to_s != params[:station_id] && ['left'].exclude?(model.state) %>
-<%= button_to({ controller: 'shipments', action: 'arrive', line_id: model.line_id, station_id: params[:station_id], id: model.id }, form: { data: { turbo_confirm: t('.arrive.confirm') }, class: 'cell has-column-centered' }) do %>
+<%= button_to({ controller: 'shipments', action: 'arrive', line_id: model.line_id, station_id: params[:station_id], id: model.id }, form: { data: { turbo_confirm: t('.arrive.confirm') } }, class: 'cell has-column-centered') do %>
   <%= svg_tag 'stop' %>
   <span class="text-success"><%= t('.shipments.arrive.title') %></span>
 <% end if model.state == 'left' %>

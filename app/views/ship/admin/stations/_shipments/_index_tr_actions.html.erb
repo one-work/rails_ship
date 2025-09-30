@@ -5,7 +5,7 @@
   <%= link_to({ controller: 'shipment_items', shipment_id: model.id }, aria: { label: t('ship.admin.shipment_items.index.title') }, class: 'button is-small is-borderless') do %>
     <%= svg_tag 'list' %>
   <% end %>
-  <%= button_to({ controller: 'ship/admin/shipments', action: 'leave', line_id: model.line_id, station_id: @station.id, id: model.id }, form: { data: { turbo_confirm: t('.leave.confirm') }, class: 'cell' }) do %>
+  <%= button_to({ controller: 'ship/admin/shipments', action: 'leave', line_id: model.line_id, station_id: @station.id, id: model.id }, form: { data: { turbo_confirm: t('.leave.confirm') }, class: 'button is-small is-borderless' }) do %>
     <i class="fa-solid fa-play text-danger"></i>
     <span class="text-danger"><%= t('ship.admin.shipments.leave.title') %></span>
   <% end #if model.line_stations.pluck(:station_id).last.to_s != params[:station_id] && ['left'].exclude?(model.state) %>
