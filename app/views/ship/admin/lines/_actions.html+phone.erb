@@ -1,13 +1,15 @@
-<%= link_to({ action: 'show', id: model.id }, class: 'cell') do %>
+<%= link_to({ action: 'show', id: model.id }, class: 'cell has-column-centered') do %>
   <%= svg_tag 'eye' %>
   <span><%= t('.show.title') %></span>
 <% end %>
-<%= link_to({ controller: 'line_stations', line_id: model.id }, class: 'cell') do %>
+<%= link_to({ controller: 'line_stations', line_id: model.id }, class: 'cell has-column-centered') do %>
   <%= svg_tag 'location-dot' %>
-  <span class="ml-1"><%= t('ship.admin.line_stations.index.title') %></span>
-  <span class="ml-1"><%= model.line_stations_count %></span>
+  <span>
+    <span><%= t('.line_stations.index.title') %></span>
+    <span class="ml-1"><%= model.line_stations_count %></span>
+  </span>
 <% end %>
-<%= link_to({ controller: 'shipments', line_id: model.id }, class: 'cell') do %>
+<%= link_to({ controller: 'shipments', line_id: model.id }, class: 'cell has-column-centered') do %>
   <%= svg_tag 'list' %>
-  <span class="ml-1"><%= t('ship.admin.shipments.index.title') %></span>
+  <span><%= t('.shipments.index.title') %></span>
 <% end %>
