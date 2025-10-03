@@ -14,4 +14,3 @@
 </td>
 <td><%= model.price.to_money.format.html_safe %></td>
 <td><%= (model.invest_ratio * 100).to_fs(:percentage, precision: 0) %></td>
-<td><%= render partial: 'index_tr_actions', locals: { model: model } %></td>
