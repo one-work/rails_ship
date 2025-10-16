@@ -1,4 +1,4 @@
-<%= form_with theme: 'weui', model: @payment, scope: :payment, url: { action: 'payment_create', station_id: params[:station_id] } do |f| %>
+<%= form_with theme: 'default_phone', model: @payment, scope: :payment, url: { action: 'payment_create', station_id: params[:station_id] } do |f| %>
   <div class="form-fields">
     <%= f.number_field :total_amount %>
     <%= f.file_field :proof, required: true %>

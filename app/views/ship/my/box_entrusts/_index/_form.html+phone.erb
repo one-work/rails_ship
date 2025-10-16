@@ -1,5 +1,5 @@
 <%= render 'amount' %>
-<%= form_with theme: 'weui', model: @order, url: { controller: 'orders', action: 'create', box_hold_id: @box_hold.id }, class: 'pt-0' do |f| %>
+<%= form_with theme: 'default_phone', model: @order, url: { controller: 'orders', action: 'create', box_hold_id: @box_hold.id }, class: 'pt-0' do |f| %>
   <div class="weui-cells mt-0">
     <%= f.fields :items do |ef| %>
     <div class="weui-cell" data-controller="modify" data-modify-quantity-value="quantity" data-modify-total-value="<%= @lawful_wallet.amount %>">

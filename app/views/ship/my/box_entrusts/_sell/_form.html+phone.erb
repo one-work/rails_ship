@@ -1,5 +1,5 @@
 <%= render 'amount' %>
-<%= form_with theme: 'weui', model: @box_sell, url: { controller: 'box_sells', action: 'create', box_hold_id: @box_hold.id }, class: 'pt-0' do |f| %>
+<%= form_with theme: 'default_phone', model: @box_sell, url: { controller: 'box_sells', action: 'create', box_hold_id: @box_hold.id }, class: 'pt-0' do |f| %>
   <div class="weui-cells mt-0">
     <div class="weui-cell">
       <div class="media-left">

@@ -1,4 +1,4 @@
-<%= form_with theme: 'weui', model: @address, url: { action: 'order_create' } do |f| %>
+<%= form_with theme: 'default_phone', model: @address, url: { action: 'order_create' } do |f| %>
   <%= render 'error_messages', target: f.object %>
   <%= f.text_field :contact, value: current_user.name %>
   <%= f.text_field :tel, value: current_account.identity %>

@@ -7,7 +7,7 @@
       <button class="delete" data-action="modal#hide"></button>
     </header>
     <div class="modal-card-body">
-      <%= form_with theme: 'weui', model: @address, url: { action: 'wechat' }, data: { controller: 'wechat_address' } do |f| %>
+      <%= form_with theme: 'default_phone', model: @address, url: { action: 'wechat' }, data: { controller: 'wechat_address' } do |f| %>
         <%= f.text_field :contact_person %>
         <%= f.text_field :tel %>
         <div class="weui-cell weui-cell_active weui-cell_readonly">
