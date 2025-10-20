@@ -12,5 +12,9 @@ module Ship
       @cart = Cart.default_where(default_params).find params[:cart_id]
     end
 
+    def set_new_address
+      @address = current_client.organ_addresses.build(address_params)
+    end
+
   end
 end
