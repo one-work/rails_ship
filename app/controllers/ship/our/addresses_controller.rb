@@ -8,11 +8,5 @@ module Ship
       @addresses = current_client.organ.addresses.includes(:area).default_where(q_params).page(params[:page])
     end
 
-    def cart
-      q_params = {}
-
-      @addresses = current_client.organ.addresses.includes(:area).default_where(q_params).page(params[:page])
-    end
-
   end
 end
