@@ -16,5 +16,13 @@ module Ship
       @address = current_client.organ_addresses.build(address_params)
     end
 
+    def set_new_address_program
+      area = Area.sure_find [params['provinceName'], params['cityName'], params['countyName']].reject(&:blank?).uniq
+      cached_key = [area.id, params['detailInfo'], params['userName'], params['telNumber']].join(',')
+
+      @address = current_client.organ_addresses.find_or_initialize_by(cached_key: cached_key)
+      @address.area = area
+    end
+
   end
 end

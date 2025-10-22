@@ -2,6 +2,7 @@ module Ship
   class My::AddressesController < My::BaseController
     before_action :set_address, only: [:show, :edit, :update, :destroy]
     before_action :set_new_address, only: [:new, :create, :order_new, :order_create, :from_new, :from_create]
+    before_action :set_new_address_program, only: [:program]
     skip_before_action :verify_authenticity_token, only: [:program] if whether_filter(:verify_authenticity_token)
 
     def index
@@ -87,15 +88,10 @@ module Ship
     end
 
     def program
-      area = Area.sure_find [params['provinceName'], params['cityName'], params['countyName']].reject(&:blank?).uniq
-      cached_key = [area.id, params['detailInfo'], params['userName'], params['telNumber']].join(',')
-
-      @address = current_user.addresses.find_or_initialize_by(cached_key: cached_key)
       @address.contact_person = params['userName']
       @address.tel = params['telNumber']
       @address.detail = params['detailInfo']
-      @address.post_code = params[:postalCode]
-      @address.area = area
+      @address.post_code = params['postalCode']
       @address.source = 'program'
       @address.save
 
@@ -115,6 +111,14 @@ module Ship
 
     def set_new_address
       @address = current_user.addresses.build(address_params)
+    end
+
+    def set_new_address_program
+      area = Area.sure_find [params['provinceName'], params['cityName'], params['countyName']].reject(&:blank?).uniq
+      cached_key = [area.id, params['detailInfo'], params['userName'], params['telNumber']].join(',')
+
+      @address = current_user.addresses.find_or_initialize_by(cached_key: cached_key)
+      @address.area = area
     end
 
     def address_params

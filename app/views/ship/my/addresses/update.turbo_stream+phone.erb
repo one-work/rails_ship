@@ -1,1 +1,1 @@
-<%= turbo_stream.update 'box', partial: 'show_table', locals: { model: @address } %>
+<%= turbo_stream.append 'body', partial: 'visit', locals: { url: url_for(action: 'index') } %>
