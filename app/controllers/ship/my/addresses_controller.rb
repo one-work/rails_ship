@@ -99,7 +99,7 @@ module Ship
       @address.source = 'program'
       @address.save
 
-      render json: { url: url_for(action: 'edit', id: @address.id) }
+      render json: { url: url_for(action: 'edit', id: @address.id, auth_token: Current.session.id) }
     end
 
     def join
