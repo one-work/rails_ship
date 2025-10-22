@@ -91,7 +91,7 @@ module Ship
       cached_key = [area.id, params['detailInfo'], params['userName'], params['telNumber']].join(',')
 
       @address = current_user.addresses.find_or_initialize_by(cached_key: cached_key)
-      @address.contact = params['userName']
+      @address.contact_person = params['userName']
       @address.tel = params['telNumber']
       @address.detail = params['detailInfo']
       @address.post_code = params[:postalCode]
