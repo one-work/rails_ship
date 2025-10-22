@@ -1,4 +1,4 @@
-<%= form_with theme: nil, scope: 'cart', url: { controller: 'trade/my/carts', action: 'update', id: params[:cart_id] }, method: :patch, id: 'cart_address_form' do %>
+<%= form_with theme: nil, scope: 'cart', url: { controller: "trade/#{params.fetch(:namespace, 'my')}/carts", action: 'update', id: params[:cart_id] }, method: :patch, id: 'cart_address_form' do %>
 <% end %>
 
 <div id="wechat_panel" class="py-3">
