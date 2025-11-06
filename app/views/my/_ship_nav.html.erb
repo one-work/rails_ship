@@ -2,5 +2,5 @@
   <span><%= t('ship.my.title') %></span>
 </div>
 <div class="menu-list">
-  <%= link_to t('ship.my.addresses.index.title'), { controller: 'ship/my/addresses' }, class: active_helper(controllers: ['addresses'], active: 'is-active') %>
+  <%= link_to t('ship.my.addresses.index.title'), { controller: 'ship/my/addresses' }, data: { turbo_frame: 'body' }, class: active_helper(controllers: ['addresses'], active: 'is-active') %>
 </div>
