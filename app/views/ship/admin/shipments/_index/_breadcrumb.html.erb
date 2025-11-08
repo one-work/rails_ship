@@ -1,14 +1,10 @@
-<div class="breadcrumb has-succeeds-separator">
-  <ul>
-    <li><%= link_to t('ship.admin.lines.index.title'), { controller: 'lines' } %></li>
-    <li>
-      <span class="pl-3"><%= @line.name %></span>
-      <span class="tag is-light pr-3">
-        <span><%= @line.start_name %></span>
-        <i class="fa-solid fa-right-long text-grey px-1"></i>
-        <span><%= @line.finish_name %></span>
-      </span>
-    </li>
-    <li class="is-active"><%= t('.title') %></li>
-  </ul>
-</div>
+<li><%= link_to t('ship.admin.lines.index.title'), { controller: 'lines' } %></li>
+<li>
+  <span class="pl-3"><%= @line.name %></span>
+  <span class="tag is-light pr-3">
+    <span><%= @line.start_name %></span>
+    <i class="fa-solid fa-right-long text-grey px-1"></i>
+    <span><%= @line.finish_name %></span>
+  </span>
+</li>
+<li class="is-active"><%= t('.title') %></li>

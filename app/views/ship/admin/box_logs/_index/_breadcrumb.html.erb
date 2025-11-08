@@ -1,14 +1,10 @@
-<div class="breadcrumb has-succeeds-separator">
-  <ul>
-    <li><%= link_to t('ship.admin.box_hosts.index.title'), { controller: 'box_hosts' } %></li>
-    <li>
-      <span class="px-3">
-        <span><%= @box.box_specification.name %></span>
-        <span class="pl-1 size-7"><%= @box.box_specification.measure %></span>
-      </span>
-    </li>
-    <li><%= link_to t('ship.in.boxes.index.title'), { controller: 'boxes', anchor: "tr_#{@box.id}" } %></li>
-    <li><span class="px-3"><%= @box.code %></span></li>
-    <li class="is-active"><%= t('.title') %></li>
-  </ul>
-</div>
+<li><%= link_to t('ship.admin.box_hosts.index.title'), { controller: 'box_hosts' } %></li>
+<li>
+  <span class="px-3">
+    <span><%= @box.box_specification.name %></span>
+    <span class="pl-1 size-7"><%= @box.box_specification.measure %></span>
+  </span>
+</li>
+<li><%= link_to t('ship.in.boxes.index.title'), { controller: 'boxes', anchor: "tr_#{@box.id}" } %></li>
+<li><span class="px-3"><%= @box.code %></span></li>
+<li class="is-active"><%= t('.title') %></li>

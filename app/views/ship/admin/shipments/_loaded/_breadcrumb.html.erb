@@ -1,12 +1,8 @@
-<div class="breadcrumb has-succeeds-separator">
-  <ul>
-    <li><%= link_to t('ship.admin.shipments.index.title'), { action: 'index' } %></li>
-    <li><span class="px-3"><%= @shipment.line.name %></span></li>
-    <li><%= link_to t('ship.admin.shipments.stations.title'), { action: 'stations' } %></li>
-    <li><span class="px-3"><%= @line_station.station.name %></span></li>
-    <li class="is-active">
-      <i class="fa-solid fa-person-dolly text-success"></i>
-      <span class="pl-1"><%= t('.title') %></span>
-    </li>
-  </ul>
-</div>
+<li><%= link_to t('ship.admin.shipments.index.title'), { action: 'index' } %></li>
+<li><span class="px-3"><%= @shipment.line.name %></span></li>
+<li><%= link_to t('ship.admin.shipments.stations.title'), { action: 'stations' } %></li>
+<li><span class="px-3"><%= @line_station.station.name %></span></li>
+<li class="is-active">
+  <i class="fa-solid fa-person-dolly text-success"></i>
+  <span class="pl-1"><%= t('.title') %></span>
+</li>

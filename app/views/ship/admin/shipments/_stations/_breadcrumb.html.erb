@@ -1,7 +1,3 @@
-<div class="breadcrumb has-succeeds-separator">
-  <ul>
-    <li><%= link_to t('ship.admin.shipments.index.title'), { controller: 'shipments' } %></li>
-    <li><span class="px-3"><%= @shipment.line.name %></span></li>
-    <li class="is-active"><%= t('.title') %></li>
-  </ul>
-</div>
+<li><%= link_to t('ship.admin.shipments.index.title'), { controller: 'shipments' } %></li>
+<li><span class="px-3"><%= @shipment.line.name %></span></li>
+<li class="is-active"><%= t('.title') %></li>

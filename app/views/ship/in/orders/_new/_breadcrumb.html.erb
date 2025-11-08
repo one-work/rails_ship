@@ -1,10 +1,6 @@
-<div class="breadcrumb has-succeeds-separator">
-  <ul>
-    <% if @order.current_cart.aim == 'rent' %>
-      <li><%= link_to t('ship.in.box_specifications.rent.title'), { controller: 'in/box_specifications', action: 'rent' } %></li>
-    <% else %>
-      <li><%= link_to t('ship.in.box_specifications.buy.title'), { controller: 'in/box_specifications', action: 'buy' } %></li>
-    <% end %>
-    <li class="is-active"><%= t('.title') %></li>
-  </ul>
-</div>
+<% if @order.current_cart.aim == 'rent' %>
+  <li><%= link_to t('ship.in.box_specifications.rent.title'), { controller: 'in/box_specifications', action: 'rent' } %></li>
+<% else %>
+  <li><%= link_to t('ship.in.box_specifications.buy.title'), { controller: 'in/box_specifications', action: 'buy' } %></li>
+<% end %>
+<li class="is-active"><%= t('.title') %></li>

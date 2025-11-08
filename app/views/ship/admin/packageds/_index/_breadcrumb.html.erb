@@ -1,15 +1,11 @@
-<div class="breadcrumb has-succeeds-separator">
-  <ul>
-    <li><%= link_to t('ship.admin.packages.index.title'), { controller: 'packages', anchor: "tr_#{@package.id}" } %></li>
-    <li><span class="px-3"><%= @package.id %></span></li>
-    <li>
-    <% if @package.address %>
-      <span class="px-3">
-        <span><%= @package.address.area.full_name %></span>
-        <span><%= @package.address.detail %></span>
-      </span>
-    <% end %>
-    </li>
-    <li class="is-active"><%= t('.title') %></li>
-  </ul>
-</div>
+<li><%= link_to t('ship.admin.packages.index.title'), { controller: 'packages', anchor: "tr_#{@package.id}" } %></li>
+<li><span class="px-3"><%= @package.id %></span></li>
+<li>
+<% if @package.address %>
+  <span class="px-3">
+    <span><%= @package.address.area.full_name %></span>
+    <span><%= @package.address.detail %></span>
+  </span>
+<% end %>
+</li>
+<li class="is-active"><%= t('.title') %></li>
