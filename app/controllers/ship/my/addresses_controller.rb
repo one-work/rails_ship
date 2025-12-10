@@ -8,6 +8,7 @@ module Ship
 
     def index
       q_params = {}
+      q_params.merge! default_params
 
       @addresses = current_user.addresses.includes(:area, :station).default_where(q_params).order(id: :desc).page(params[:page])
       @address = current_user.addresses.build
@@ -17,11 +18,11 @@ module Ship
     end
 
     def order
-      @addresses = current_user.addresses.includes(:area, :station).order(id: :desc).page(params[:page])
+      @addresses = current_user.addresses.includes(:area, :station).default_where(default_params).order(id: :desc).page(params[:page])
     end
 
     def order_from
-      @addresses = current_user.addresses.includes(:area, :station).order(id: :desc).page(params[:page])
+      @addresses = current_user.addresses.includes(:area, :station).defualt_where(default_params).order(id: :desc).page(params[:page])
     end
 
     def new
