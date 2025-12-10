@@ -83,6 +83,7 @@ module Ship
     end
 
     def program
+      @address.organ_id = params[:organ_id]
       @address.contact_person = params['userName']
       @address.tel = params['telNumber']
       @address.detail = params['detailInfo']
@@ -90,7 +91,8 @@ module Ship
       @address.source = 'program'
       @address.save
 
-      render json: { url: url_for(action: 'edit', id: @address.id, auth_token: Current.session.id) }
+      organ = Organ.find params[:organ_id]
+      render json: { url: url_for(action: 'edit', id: @address.id, auth_token: Current.session.id, host: organ.host) }
     end
 
     def join
