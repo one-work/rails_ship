@@ -40,7 +40,7 @@ module Ship
     end
 
     def init_code
-      self.code = UidHelper.usec_uuid('BOX')
+      self.code = UidUtil.usec_uuid('BOX')
     end
 
     def init_box_host
@@ -77,11 +77,11 @@ module Ship
     end
 
     def qrcode_enter_png
-      QrcodeHelper.code_png(enter_url, border_modules: 0, fill: 'pink')
+      QrcodeUtil.code_png(enter_url, border_modules: 0, fill: 'pink')
     end
 
     def qrcode_enter_url
-      QrcodeHelper.data_url(enter_url)
+      QrcodeUtil.data_url(enter_url)
     end
 
   end
