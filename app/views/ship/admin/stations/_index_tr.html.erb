@@ -1,0 +1,7 @@
+<%=
+  tr_tag(
+    model,
+    { href: url_for(action: 'shipments', id: model.id), icon: 'list', title: t('.stations.shipments.title') },
+    { href: url_for(action: 'lines', id: model.id), icon: 'signs-post', title: t('.stations.lines.title') }
+  ) { yield }
+%>

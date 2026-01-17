@@ -1,0 +1,28 @@
+<%=
+  tr_tag(
+    model,
+    {
+      href: url_for(action: 'stations', id: model.id),
+      icon: 'location-dot',
+      title: t('.stations.title')
+    },
+    {
+      href: url_for(controller: 'shipment_items', shipment_id: model.id),
+      icon: 'list',
+      title: t('.shipment_items.index.title')
+    },
+    {
+      action: url_for(controller: 'shipments', action: 'leave', line_id: model.line_id, station_id: @station.id, id: model.id),
+      icon: 'play',
+      title: t('.shipments.leave.title'),
+      confirm: t('.shipments.leave.confirm'),
+      enable: model.line_stations.pluck(:station_id).last.to_s != params[:station_id] && ['left'].exclude?(model.state)
+    },
+    {
+      action: url_for(controller: 'shipments', action: 'arrive', line_id: model.line_id, station_id: @station.id, id: model.id),
+      icon: 'stop',
+      title: t('.shipments.arrive.title'),
+      enable: model.state == 'left'
+    }
+  ) { yield }
+%>
