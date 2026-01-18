@@ -1,7 +1,7 @@
 <th><%= Ship::Line.human_attribute_name(:name) %></th>
 <th>
   <span><%= Ship::Line.human_attribute_name(:start_name) %></span>
-  <i class="fa-solid fa-right-long text-grey px-1"></i>
+  <%= svg_tag 'right-long' %>
   <span><%= Ship::Line.human_attribute_name(:finish_name) %></span>
 </th>
 <th><%= Ship::Line.human_attribute_name(:line_stations_count) %></th>
