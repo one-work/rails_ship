@@ -4,7 +4,7 @@ module Ship
 
     def index
       q_params = {}
-      q_params.merge! params.permit(:name)
+      q_params.merge! params.permit(:name, 'name-like')
 
       @areas = Area.unscoped.default_where(q_params).order(id: :asc).page(params[:page])
     end
