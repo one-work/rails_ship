@@ -14,13 +14,13 @@ module Ship
       @area = Area.unscoped.find params[:id]
     end
 
-    def area_permit_params
-      [
+    def area_params
+      params.fetch(:area, {}).permit(
         :name,
         :popular,
         :published,
         :parent_ancestors
-      ]
+      )
     end
 
   end
