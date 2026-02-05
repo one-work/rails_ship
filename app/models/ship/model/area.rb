@@ -23,7 +23,7 @@ module Ship
 
       default_scope -> { where(published: true) }
 
-      after_save_commit :sync_names, if: -> { saved_change_to_name? || saved_change_to_parent_id? }
+      after_save_commit :sync_names!, if: -> { saved_change_to_name? || saved_change_to_parent_id? }
       after_commit :sync_children_names
       after_save_commit :update_timestamp, :delete_cache, on: [:create, :update]
     end
@@ -33,7 +33,8 @@ module Ship
     end
 
     # todo sync after destroy parent
-    def sync_names
+    def sync_names!
+      self.full = self.name if full.blank?
       self.names = self.self_and_ancestors.pluck(:name).reverse
       self.save
     end
@@ -69,7 +70,7 @@ module Ship
 
       def rebuild_names
         find_each do |area|
-          area.sync_names
+          area.sync_names!
         end
       end
 
