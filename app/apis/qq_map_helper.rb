@@ -1,12 +1,11 @@
 module QqMapHelper
   KEY = Rails.application.credentials.dig(:qq_map, :key)
   SK = Rails.application.credentials.dig(:qq_map, :secret)
-  BASE = 'https://apis.map.qq.com/'
   extend CommonApi
   extend self
 
-  def set_client
-    @client = HTTPX.with(origin: BASE, debug: STDERR, debug_level: 1)
+  def base_url
+    'https://apis.map.qq.com/'
   end
 
   def geocoder(lat:, lng:)
