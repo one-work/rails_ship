@@ -9,7 +9,7 @@ module QqMapHelper
   end
 
   def geocoder(lat:, lng:)
-    result = get 'ws/geocoder/v1', params: { location: [lat, lng].join(',') }
+    result = get 'ws/geocoder/v1', location: [lat, lng].join(',')
     if result['status'] == 0
       result['result']
     else
@@ -19,7 +19,7 @@ module QqMapHelper
   end
 
   def ip(ip)
-    result = get 'ws/location/v1/ip', params: { ip: ip }
+    result = get 'ws/location/v1/ip', ip: ip
     if result['status'] == 0
       result['result']
     else
