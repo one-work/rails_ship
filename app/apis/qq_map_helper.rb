@@ -9,8 +9,7 @@ module QqMapHelper
   end
 
   def geocoder(lat:, lng:)
-    r = get 'ws/geocoder/v1', params: { location: [lat, lng].join(',') }
-    result = r.json
+    result = get 'ws/geocoder/v1', params: { location: [lat, lng].join(',') }
     if result['status'] == 0
       result['result']
     else
@@ -20,21 +19,17 @@ module QqMapHelper
   end
 
   def ip(ip)
-    r = get 'ws/location/v1/ip', params: { ip: ip }
-    if r.status >= 200 && r.status < 300
-      result = r.json
-      if result['status'] == 0
-        result['result']
-      else
-        Rails.logger.error(result)
-        result
-      end
+    result = get 'ws/location/v1/ip', params: { ip: ip }
+    if result['status'] == 0
+      result['result']
+    else
+      Rails.logger.error(result)
+      result
     end
   end
 
   def districts
-    r = get 'ws/district/v1/list'
-    result = r.json
+    result = get 'ws/district/v1/list'
     if result['status'] == 0
       result['result']
     else
@@ -72,14 +67,15 @@ module QqMapHelper
   end
 
   private
-  def with_access_token(tries: 2, params: {}, headers: {}, payload: {}, path: '')
-    params.merge! sign: sign_params(path, params)
+  def with_access_token(params:, path:, **)
+    params.merge!(key: KEY)
+    params.merge! sig: sign_params(path, params)
     yield
   end
 
   def sign_params(path, body)
     r = body.sort.map(&->(i){ "#{i[0]}=#{i[1]}" }).join('&')
-    body.merge! sig: Digest::MD5.hexdigest("/#{path}?#{r}#{SK}"), key: KEY
+    Digest::MD5.hexdigest("/#{path}?#{r}#{SK}")
   end
 
 end
