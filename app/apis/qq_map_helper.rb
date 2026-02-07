@@ -42,7 +42,7 @@ module QqMapHelper
     results = districts
     results[0].each do |result|
       area = Ship::Area.find_or_initialize_by(full: result['fullname'])
-      area.name = result['name']
+      area.name = result['name'] || result['fullname']
       area.code = result['id']
       area.save
     end
@@ -51,7 +51,7 @@ module QqMapHelper
       area = Ship::Area.find_or_initialize_by(full: result['fullname'])
       parent = Ship::Area.find_by(code: "#{result['id'][0..1]}0000")
       area.parent = parent
-      area.name = result['name']
+      area.name = result['name'] || result['fullname']
       area.code = result['id']
       area.save
     end
@@ -60,7 +60,7 @@ module QqMapHelper
       area = Ship::Area.find_or_initialize_by(full: result['fullname'])
       parent = Ship::Area.find_by(code: "#{result['id'][0..3]}00")
       area.parent = parent
-      area.name = result['name']
+      area.name = result['name'] || result['fullname']
       area.code = result['id']
       area.save
     end
