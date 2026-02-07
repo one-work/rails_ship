@@ -73,7 +73,7 @@ module QqMapHelper
 
   private
   def with_access_token(tries: 2, params: {}, headers: {}, payload: {}, path: '')
-    payload.merge! sign: sign_params(path, params)
+    params.merge! sign: sign_params(path, params)
     yield
   end
 
