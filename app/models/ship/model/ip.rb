@@ -3,11 +3,13 @@ module Ship
     extend ActiveSupport::Concern
 
     included do
-      attribute :ip_address, :string
+      attribute :ip_address, :string, index: true
       attribute :ip_city, :string
       attribute :lat, :decimal, precision: 10, scale: 8
       attribute :lng, :decimal, precision: 11, scale: 8
       attribute :code, :string
+
+      has_one :area, primary_key: :code, foreign_key: :code
 
       before_create :get_ip_detail
     end
