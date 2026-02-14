@@ -10,6 +10,7 @@ module Ship
       attribute :code, :string
 
       has_one :area, primary_key: :code, foreign_key: :code
+      has_one :named_area, class_name: 'Area', primary_key: :ip_city, foreign_key: :full
 
       before_create :get_ip_detail
     end
