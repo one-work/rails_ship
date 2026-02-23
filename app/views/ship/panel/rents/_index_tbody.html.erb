@@ -6,7 +6,7 @@
   <p class="text-grey size-7"><time data-controller="time"><%= model.estimate_finish_at&.to_fs(:iso8601) %></time></p>
   <p>
   <% if model.finish_at.blank? %>
-    <time data-controller="time-count" data-time-count-time-value="<%= model.start_at&.to_fs(:iso8601) %>" class="family-monospace"><%= exact_distance_time(model.start_at, Time.current) %></time>
+    <time data-controller="time-count" data-time-count-time-value="<%= model.start_at&.to_fs(:iso8601) %>" class="family-monospace"><%= distance_time(model.start_at, Time.current) %></time>
   <% else %>
     <%= model.duration.inspect %>
   <% end %>
