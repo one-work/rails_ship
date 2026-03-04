@@ -12,7 +12,7 @@ module Ship
     end
 
     def new
-      @address = Address.new params.permit(*address_permit_params)
+      @address = Address.new address_params
       @address.area ||= Area.new
     end
 
@@ -33,12 +33,7 @@ module Ship
     end
 
     def address_params
-      p = params.fetch(:address, {}).permit(*address_permit_params)
-      p.merge! default_form_params
-    end
-
-    def address_permit_params
-      [
+      p = params.fetch(:address, {}).permit(
         :kind,
         :name,
         :contact_person,
@@ -48,7 +43,8 @@ module Ship
         :principal,
         :station_id,
         :area_ancestors
-      ]
+      )
+      p.merge! default_form_params
     end
 
   end

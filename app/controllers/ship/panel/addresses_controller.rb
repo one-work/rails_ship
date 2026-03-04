@@ -22,11 +22,7 @@ module Ship
     end
 
     def address_params
-      params.fetch(:address, {}).permit(*address_permit_params)
-    end
-
-    def address_permit_params
-      [
+      params.fetch(:address, {}).permit(
         :contact,
         :tel,
         :detail,
@@ -34,7 +30,7 @@ module Ship
         :station_id,
         :principal,
         :area_ancestors
-      ]
+      )
     end
 
   end
