@@ -13,6 +13,7 @@ module Ship
       else
         attribute :names, :json, default: []
       end
+      attribute :level, :string
       attribute :timezone, :string
       attribute :locale, :string
       attribute :code, :string
@@ -35,6 +36,7 @@ module Ship
     def sync_names!
       self.full = self.name if full.blank?
       self.names = self.self_and_ancestors.pluck(:name).reverse
+      self.level = self.names.size
       self.save
     end
 
