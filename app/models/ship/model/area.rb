@@ -13,7 +13,7 @@ module Ship
       else
         attribute :names, :json, default: []
       end
-      attribute :level, :string
+      attribute :level, :integer
       attribute :timezone, :string
       attribute :locale, :string
       attribute :code, :string
