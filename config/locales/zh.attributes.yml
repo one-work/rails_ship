@@ -105,6 +105,8 @@ zh:
         contact_person: 联系人
         tel: 手机号
         detail: 详细地址
+        contact: 联系人
+        source: 来源
         area_id: 地区
         post_code: 邮政编码
         principal: 默认地址
