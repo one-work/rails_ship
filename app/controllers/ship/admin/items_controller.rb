@@ -7,7 +7,7 @@ module Ship
 
     def index
       q_params = {
-        status: ['paid', 'packaged']
+        status: ['paid', 'deliverable', 'packaged']
       }
       q_params.merge! default_params
       q_params.merge! params.permit(:user_id, :address_id, :status)
