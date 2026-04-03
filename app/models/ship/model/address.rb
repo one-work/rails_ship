@@ -11,6 +11,7 @@ module Ship
       attribute :source, :string
       attribute :cached_key, :string
       attribute :principal, :boolean, default: false
+      attribute :pending_count, :integer, default: 0, comment: '待发货'
 
       has_taxons :area
       belongs_to :area
