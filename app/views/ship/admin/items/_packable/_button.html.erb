@@ -1,4 +1,4 @@
-<%= button_to({ controller: 'packages', action: 'create' }, params: { '[package]address_id': @address.id }, class: 'button is-primary my-2') do %>
+<%= button_to({ controller: 'packages', action: 'new' }, params: { '[package]address_id': @address.id }, class: 'button is-primary my-2') do %>
   <%= svg_tag 'dolly' %>
-  <span class="ml-1"><%= t('.package') %></span>
+  <span class="ml-1"><%= t('.packages.new.title') %></span>
 <% end %>

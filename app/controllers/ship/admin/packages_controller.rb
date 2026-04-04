@@ -3,7 +3,7 @@ module Ship
     before_action :set_package, only: [:show, :pdf, :print_data, :shipment_items, :edit, :update, :destroy]
     before_action :set_new_package, only: [:new, :create]
     before_action :set_address, only: [:address]
-    before_action :set_stations, only: [:edit, :update]
+    before_action :set_stations, only: [:new, :create, :edit, :update]
     skip_before_action :require_user, only: [:print_data] if whether_filter :require_user
     skip_before_action :require_role, only: [:print_data] if whether_filter :require_role
 
@@ -53,7 +53,7 @@ module Ship
     end
 
     def package_params
-      p = params.fetch(:package, {}).permit(
+      _p = params.fetch(:package, {}).permit(
         :state,
         :expected_on,
         :address_id,
@@ -62,7 +62,7 @@ module Ship
         :from_address_id,
         :from_station_id
       )
-      p.merge! default_form_params
+      _p.merge! default_form_params
     end
 
   end
