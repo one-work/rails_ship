@@ -46,7 +46,7 @@ module Ship
     end
 
     def packable
-      @items = Trade::Item.where(address_id: params[:address_id]).includes(:produce_plan).packable.order(id: :asc).page(params[:page])
+      @items = Trade::Item.includes(:produce_plan).packable.where(address_id: params[:address_id]).order(id: :asc).page(params[:page])
       @produce_plans = @items.map(&:produce_plan).compact.uniq
     end
 
