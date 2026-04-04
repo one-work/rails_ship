@@ -1,4 +1,4 @@
 <%= button_to({ controller: 'packages', action: 'create' }, params: { '[package]address_id': @address.id }, class: 'button is-primary my-2') do %>
-  <i class="fa-solid fa-hand-holding-usd"></i>
+  <%= svg_tag 'dolly' %>
   <span class="ml-1"><%= t('.package') %></span>
 <% end %>
