@@ -1,0 +1,9 @@
+<%=
+  tr_tag(
+    model,
+    {
+      href: url_for(controller: 'items', action: 'packages', address_id: model.id),
+      title: t('.items.packages.title')
+    }
+  ) { yield }
+%>

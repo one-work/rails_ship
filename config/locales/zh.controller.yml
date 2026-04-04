@@ -87,6 +87,8 @@ zh:
       items:
         index:
           title: 订单
+        packages:
+          title: 打包
         packable:
           title: 待打包订单
           package: 打包
