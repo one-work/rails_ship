@@ -1,0 +1,16 @@
+<td>
+  <p><%= model.address.contact_person %></p>
+  <p><%= model.address.tel %></p>
+</td>
+<td>
+  <p><strong><%= model.address.area.full_name %></strong></p>
+  <p><%= model.address.detail %></p>
+</td>
+<td><%= model.address.station&.name %></td>
+<td>
+  <%= link_to({ controller: 'items', action: 'packable', address_id: model.address_id }, class: 'button is-small is-borderless') do %>
+    <i class="fa-solid fa-dolly"></i>
+    <span class="pl-1"><%= @count[model.address_id] %></span>
+    <span><%= t('.items.index.title') %></span>
+  <% end %>
+</td>

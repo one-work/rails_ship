@@ -20,7 +20,8 @@ module Ship
       q_params.merge! default_params
       q_params.merge! params.permit(:user_id)
 
-      @items = Trade::Item.packable.includes(:address).where.not(address_id: nil).default_where(q_params).page(params[:page]).group_by(&:address)
+      @items = Trade::Item.includes(:address).packable.where.not(address_id: nil).default_where(q_params).select(:address_id).group(:address_id)
+      @count = @items.count
     end
 
     def from

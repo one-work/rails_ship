@@ -138,7 +138,7 @@ Rails.application.routes.draw do
       end
       resources :items, except: [:destroy] do
         collection do
-          get 'packages/:address_id' => :packages
+          get :packages
           get 'address/:address_id' => :packable
           get 'packaged/:address_id' => :packaged
           get 'user/:user_id' => :user
