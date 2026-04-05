@@ -19,7 +19,7 @@ module Ship
     end
 
     def batch_pdf
-      boxes = @box_host.boxes.find params[:ids].split(',')
+      boxes = @box_host.boxes.find params[:ids]
       pdf = BasePdf.new(width: 78.mm, height: 40.mm)
       boxes.each do |box|
         box.pdf_content(pdf)

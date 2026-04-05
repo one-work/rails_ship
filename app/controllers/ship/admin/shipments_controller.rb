@@ -43,7 +43,7 @@ module Ship
     end
 
     def loaded_create
-      packages = Package.find params[:ids].split(',')
+      packages = Package.find params[:ids]
 
       ss = packages.map do |package|
         si = @shipment.shipment_items.find_or_initialize_by(package_id: package.id)
@@ -65,7 +65,7 @@ module Ship
     end
 
     def unloaded_create
-      packages = Package.find params[:ids].split(',')
+      packages = Package.find params[:ids]
 
       ss = packages.map do |package|
         si = @shipment.shipment_items.find_or_initialize_by(package_id: package.id)

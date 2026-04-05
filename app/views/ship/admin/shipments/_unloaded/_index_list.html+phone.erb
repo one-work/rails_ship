@@ -3,7 +3,6 @@
     <div data-controller="check" data-check-name-value="xx" class="flex justify-content-right align-items-center">
       <%= check_box_tag 'xxd', 'xx', false, id: nil, data: { action: 'check#toggleAll' } %>
       <%= form_with url: { action: 'unloaded_create' }, method: :post, class: 'button_to ml-2' do |f| %>
-        <%= f.hidden_field :ids, data: { check_target: 'ids' } %>
         <%= f.hidden_field :address_id, value: params[:address_id] %>
         <%= button_tag data: { action: 'check#doSubmit' }, class: 'button is-small is-light' do %>
           <i class="fa-solid fa-person-dolly-empty text-danger"></i>

@@ -11,7 +11,7 @@ module Ship
 
     def create
       @order = current_member.orders.build(order_params)
-      @trade_items = Trade::TradeItem.where(id: params[:ids].split(','))
+      @trade_items = Trade::TradeItem.where(id: params[:ids])
       @trade_items.each do |trade_item|
         trade_item.order = @order
         trade_item.status = 'ordered'

@@ -1,8 +1,7 @@
 <th>
   <div data-controller="check" data-check-name-value="xx" class="flex align-items-center">
     <%= check_box_tag 'xxd', 'xx', false, id: nil, data: { action: 'check#toggleAll' } %>
-    <%= form_with url: { action: 'unloaded_create' }, method: :post, class: 'button_to ml-2' do |f| %>
-      <%= f.hidden_field :ids, data: { check_target: 'ids' } %>
+    <%= form_with url: { action: 'unloaded_create' }, method: :post, class: 'button_to ml-2' do %>
       <%= button_tag data: { action: 'check#doSubmit' }, aria: { label: t('.title') }, class: 'button is-small is-dark' do %>
         <i class="fa-solid fa-person-dolly-empty text-danger"></i>
       <% end %>
