@@ -3,7 +3,7 @@ module Ship
     before_action :set_package
 
     def index
-      @packageds = @package.packageds.includes(:trade_item)
+      @packageds = @package.packageds.includes(:item).page(params[:page])
     end
 
     private
