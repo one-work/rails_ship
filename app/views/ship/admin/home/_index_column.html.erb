@@ -15,8 +15,14 @@
 </div>
 <p class="size-7 text-grey mb-1">发货</p>
 <div class="grid">
-  <%= link_to({ controller: 'ship/admin/addresses' }, data: { turbo_frame: 'panel', action: 'menu-popup#enter' }, class: active_helper(controllers: 'addresses', item: 'cell button is-fullwidth', active: 'cell button is-fullwidth is-active')) do %>
-    <span><%= t('ship.admin.addresses.index.title') %></span>
+  <%=
+    link_to(
+      { controller: 'ship/admin/items', action: 'packages' },
+      data: { turbo_frame: 'panel', action: 'menu-popup#enter' }, 
+      class: active_helper(controller: 'ship/admin/items', action: 'packages', item: 'cell button is-fullwidth', active: 'cell button is-fullwidth is-active')
+    ) do
+  %>
+    <span><%= t('ship.admin.items.packages.title') %></span>
   <% end %>
   <%= link_to({ controller: 'ship/admin/items' }, data: { turbo_frame: 'panel', action: 'menu-popup#enter' }, class: active_helper(controllers: 'items', item: 'cell button is-fullwidth', active: 'cell button is-fullwidth is-active')) do %>
     <span><%= t('ship.admin.items.index.title') %></span>
@@ -26,5 +32,11 @@
   <% end %>
   <%= link_to({ controller: 'ship/admin/ways' }, data: { turbo_frame: 'panel', action: 'menu-popup#enter' }, class: active_helper(controllers: ['ways', 'locations'], item: 'cell button is-fullwidth', active: 'cell button is-fullwidth is-active')) do %>
     <span><%= t('ship.admin.ways.index.title') %></span>
+  <% end %>
+</div>
+<p class="size-7 text-grey mb-1">发货</p>
+<div class="grid">
+  <%= link_to({ controller: 'ship/admin/addresses' }, data: { turbo_frame: 'panel', action: 'menu-popup#enter' }, class: active_helper(controllers: 'addresses', item: 'cell button is-fullwidth', active: 'cell button is-fullwidth is-active')) do %>
+    <span><%= t('ship.admin.addresses.index.title') %></span>
   <% end %>
 </div>
