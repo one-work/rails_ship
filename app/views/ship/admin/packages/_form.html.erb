@@ -1,2 +1,5 @@
 <%= f.date_field :expected_on %>
 <%= f.collection_select :from_station_id, @stations, :id, :name %>
+<%= f.fields :packageds do |ef| %>
+  <%= ef.hidden_field :item_id %>
+<% end %>

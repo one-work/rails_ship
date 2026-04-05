@@ -60,7 +60,8 @@ module Ship
         :user_id,
         :produce_plan_id,
         :from_address_id,
-        :from_station_id
+        :from_station_id,
+        packageds_attributes: [:item_id]
       )
       _p.merge! default_form_params
     end
