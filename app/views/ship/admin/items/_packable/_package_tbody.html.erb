@@ -1,8 +1,8 @@
 <td>
-  <%= link_to({ action: 'shipment_items', id: model.id }, data: { turbo_frame: 'modal' }, class: 'tag') do %>
-    <i class="fa-solid fa-person-dolly text-success"></i>
-    <span class="pl-1"><%= model.state_i18n %></span>
-    <span class="pl-1"><%= model.shipment_items_count %></span>
+  <%= link_to({ controller: 'packages', action: 'shipment_items', id: model.id }, class: 'tag') do %>
+    <%= svg_tag 'person-dolly' %>
+    <span class="ml-1"><%= model.state_i18n %></span>
+    <span class="ml-1"><%= model.shipment_items_count %></span>
   <% end %>
 </td>
 <td>
