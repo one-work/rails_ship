@@ -1,11 +1,15 @@
 <td>
   <p>
     <span><%= model.from_address&.content %></span>
-    <span class="tag is-success"><%= model.from_station&.name %></span>
+    <% if model.from_station %>
+      <span class="tag is-success"><%= model.from_station.name %></span>
+    <% end %>
   </p>
   <p>
     <span><%= model.address&.content %></span>
-    <span class="tag is-danger"><%= model.station&.name %></span>
+    <% if model.station %>
+      <span class="tag is-danger"><%= model.station.name %></span>
+    <% end %>
   </p>
 </td>
 <td>

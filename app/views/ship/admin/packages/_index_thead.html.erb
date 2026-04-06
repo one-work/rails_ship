@@ -1,12 +1,6 @@
 <th>
-  <p>
-    <span><%= Ship::Package.human_attribute_name(:from_address_id) %></span>
-    <span class="tag is-success"><%= Ship::Package.human_attribute_name(:from_station_id) %></span>
-  </p>
-  <p>
-    <span><%= Ship::Package.human_attribute_name(:address_id) %></span>
-    <span class="tag is-danger"><%= Ship::Package.human_attribute_name(:station_id) %></span>
-  </p>
+  <p><%= Ship::Package.human_attribute_name(:from_address_id) %></p>
+  <p><%= Ship::Package.human_attribute_name(:address_id) %></p>
 </th>
 <th><%= Ship::Package.human_attribute_name(:state) %></th>
 <th>
