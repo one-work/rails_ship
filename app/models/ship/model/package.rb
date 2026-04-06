@@ -11,6 +11,7 @@ module Ship
       attribute :boxed_out_at, :datetime
       attribute :packageds_count, :integer, default: 0
       attribute :shipment_items_count, :integer, default: 0
+      attribute :tracking_number, :string
 
       enum :pick_mode, {
         by_self: 'by_self',

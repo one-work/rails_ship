@@ -1,5 +1,7 @@
-<%= f.date_field :expected_on %>
 <%= f.collection_select :from_station_id, @stations, :id, :name %>
+<%= f.text_field :tracking_number, autofocus: true %>
+<%= f.date_field :expected_on %>
+<%= f.hidden_field :address_id %>
 <%= f.fields :packageds do |ef| %>
   <%= ef.hidden_field :item_id %>
 <% end %>

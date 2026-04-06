@@ -92,6 +92,7 @@ zh:
         state: 状态
         confirm_mode: 确认模式
         expected_on: 预计到达
+        tracking_number: 运单号
         packageds_count: 对应订单
       ship/station:
         area_id: 所在区域

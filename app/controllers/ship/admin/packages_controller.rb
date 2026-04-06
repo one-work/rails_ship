@@ -61,6 +61,7 @@ module Ship
         :produce_plan_id,
         :from_address_id,
         :from_station_id,
+        :tracking_number,
         packageds_attributes: [:item_id]
       )
       _p.merge! default_form_params

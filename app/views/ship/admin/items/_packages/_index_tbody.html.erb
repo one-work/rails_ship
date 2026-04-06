@@ -9,8 +9,7 @@
 <td><%= model.address.station&.name %></td>
 <td>
   <%= link_to({ controller: 'items', action: 'packable', address_id: model.address_id }, class: 'button is-small is-borderless') do %>
-    <i class="fa-solid fa-dolly"></i>
-    <span class="pl-1"><%= @count[model.address_id] %></span>
-    <span><%= t('.items.index.title') %></span>
+    <span class="ml-1"><%= @count[model.address_id] %></span>
+    <span class="ml-1"><%= t('.items.index.title') %></span>
   <% end %>
 </td>
