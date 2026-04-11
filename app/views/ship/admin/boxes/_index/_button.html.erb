@@ -1,7 +1,7 @@
 <%= form_with theme: nil, model: @box, url: { action: 'create' } do |f| %>
   <%= f.hidden_field :code %>
-  <%= f.submit '新增', class: 'button is-info' %>
+  <%= f.submit '新增', class: 'button is-rounded is-info' %>
 <% end %>
 <%= form_with theme: nil, url: { action: 'batch' } do |f| %>
-  <%= f.submit '批量新增', class: 'button is-info' %>
+  <%= f.submit '批量新增', class: 'button is-rounded is-info' %>
 <% end %>

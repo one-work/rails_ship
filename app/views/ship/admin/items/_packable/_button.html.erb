@@ -1,6 +1,6 @@
 <%= form_with url: { controller: 'packages', action: 'new' }, class: 'button_to' do |f| %>
   <%= f.hidden_field 'package[address_id]', value: @address.id %>
-  <%= button_tag disabled: true, class: 'button is-primary' do %>
+  <%= button_tag disabled: true, class: 'button is-rounded is-primary' do %>
     <%= svg_tag 'dolly' %>
     <span class="ml-1"><%= t('.packages.new.title') %></span>
   <% end %>
