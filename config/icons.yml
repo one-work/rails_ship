@@ -24,6 +24,7 @@ light:
   - stop
   - trash
   - truck
+  - truck-fast
   - users
   - xmark
 regular:
