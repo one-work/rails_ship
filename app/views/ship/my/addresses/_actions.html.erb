@@ -6,7 +6,7 @@
   <%= svg_tag 'pencil' %>
   <span><%= t('.edit.title') %></span>
 <% end %>
-<%= button_to({ action: 'update', id: model.id }, method: :patch, params: { '[address]principal': true }, class: 'cell has-column-centered') do %>
+<%= button_to({ action: 'update', id: model.id }, method: :patch, params: { 'address[principal]': true }, class: 'cell has-column-centered') do %>
   <%= svg_tag 'check-double' %>
   <span>选为默认</span>
 <% end %>
