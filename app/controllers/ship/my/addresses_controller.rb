@@ -113,7 +113,7 @@ module Ship
 
     def set_new_address_wechat
       # uniq 解决['上海市', '上海市'] 的问题
-      area = Area.sure_find [params['provinceName'], params['cityName'], params['countyName']].reject(&:blank?).uniq
+      area = Area.sure_find [params['provinceName'], params['cityName'], params['countryName']].reject(&:blank?).uniq
       cached_key = [area.id, address_params[:detail], address_params[:contact_person], address_params[:tel]].join(',')
 
       @address = current_user.addresses.find_or_initialize_by(cached_key: cached_key)
@@ -121,7 +121,7 @@ module Ship
     end
 
     def set_new_address_program
-      area = Area.sure_find [params['provinceName'], params['cityName'], params['countyName']].reject(&:blank?).uniq
+      area = Area.sure_find [params['provinceName'], params['cityName'], params['countryName']].reject(&:blank?).uniq
       cached_key = [area.id, params['detailInfo'], params['userName'], params['telNumber']].join(',')
 
       @address = current_user.addresses.find_or_initialize_by(cached_key: cached_key)
