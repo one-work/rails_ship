@@ -1,30 +1,23 @@
-<div id="dialog" data-controller="modal" class="modal is-mobile is-mobile-bottom is-active">
-  <div data-action="click->modal#hide" class="modal-background has-animate-fade-in"></div>
-  <div class="modal-card">
-    <header class="modal-card-head">
-      <button class="button is-small">返回</button>
-      <div class="modal-card-title">选择</div>
-      <button class="delete" data-action="modal#hide"></button>
-    </header>
-    <div class="modal-card-body">
-      <%= form_with theme: 'default_phone', model: @address, url: { action: 'wechat' }, data: { controller: 'wechat_address' } do |f| %>
-        <%= f.text_field :contact_person %>
-        <%= f.text_field :tel %>
-        <div class="weui-cell weui-cell_active weui-cell_readonly">
-          <div class="media-left">
-            <label class="weui-label"><%= Ship::Address.human_attribute_name(:area_id) %></label>
-          </div>
-          <div class="weui-cell__bd flex">
-            <%= text_field_tag :provinceName, params[:provinceName], class: 'weui-input', readonly: true %>
-            <%= text_field_tag :cityName, params[:cityName], class: 'weui-input', readonly: true %>
-            <%= text_field_tag :countyName, params[:countyName], class: 'weui-input', readonly: true %>
-          </div>
-        </div>
-        <%= f.text_area :detail %>
-        <%= f.text_field :post_code %>
-        <%= hidden_field_tag :return_to, params[:return_to] %>
-        <%= f.submit nil, all: { submit: nil } %>
-      <% end %>
+<%= form_with theme: 'phone_modal', model: @address, url: { action: 'wechat' }, data: { controller: 'wechat_address' } do |f| %>
+  <header class="modal-card-head">
+    <button class="button is-small">返回</button>
+    <div class="modal-card-title">选择</div>
+    <button class="delete" data-action="modal#hide"></button>
+  </header>
+  <section id="modal_card_body" class="modal-card-body">
+    <%= f.text_field :contact_person %>
+    <%= f.text_field :tel %>
+    <div class="field">
+      <div class="label text-grey"><%= Ship::Address.human_attribute_name(:area_id) %></div>
+      <div class="field is-grouped">
+        <%= text_field_tag :provinceName, params[:provinceName], class: 'input', readonly: true %>
+        <%= text_field_tag :cityName, params[:cityName], class: 'input', readonly: true %>
+        <%= text_field_tag :countyName, params[:countyName], class: 'input', readonly: true %>
+      </div>
     </div>
-  </div>
-</div>
+    <%= f.text_area :detail %>
+    <%= f.text_field :post_code %>
+    <%= hidden_field_tag :return_to, params[:return_to] %>
+  </section>
+  <%= f.submit %>
+<% end %>
