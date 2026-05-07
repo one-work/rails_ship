@@ -7,8 +7,8 @@
   <span><%= model.detail %></span>
   <% if model.principal %>
   <span class="tag">
-    <i class="fa-solid fa-circle-check text-success"></i>
-    <span class="pl-1">默认地址</span>
+    <%= svg_tag 'circle-check', class: 'icon text-success' %>
+    <span>默认地址</span>
   </span>
   <% end %>
 </div>
