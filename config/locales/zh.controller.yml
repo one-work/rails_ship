@@ -1,6 +1,9 @@
 zh:
   ship:
     title: 物流管理
+    areas:
+      index:
+        title: 选择地区
     box_specifications:
       index:
         title: 买入物流箱
