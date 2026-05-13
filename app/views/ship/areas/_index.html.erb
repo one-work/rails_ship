@@ -2,14 +2,14 @@
   <div data-action="click->modal#close" class="modal-background has-animate-fade-in"></div>
   <div class="modal-card has-animate-slide-up" id="area_select">
     <header class="modal-card-head">
-      <button class="modal-close is-large" aria-label="close"></button>
+      <button type="button" data-action="modal#close" class="button is-borderless">
+        <%= svg_tag 'xmark' %>
+      </button>
       <p class="modal-card-title"><%= t('.title') %></p>
+      <span class="px-5"></span>
     </header>
     <section class="modal-card-body p-0">
       <div id="areas_panel" class="panel is-borderless">
-        <div class="panel-block">
-          dd
-        </div>
         <%= render partial: 'area', collection: @areas, as: :area %>
       </div>
     </section>
