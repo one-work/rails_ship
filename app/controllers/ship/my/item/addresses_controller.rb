@@ -1,7 +1,7 @@
 module Ship
   class My::Item::AddressesController < Ship::My::AddressesController
     before_action :set_item
-    before_action :set_address, only: [:show, :edit, :update, :destroy, :actions]
+    before_action :set_address, only: [:show, :edit, :update, :destroy, :item, :actions]
     before_action :set_new_address, only: [:new, :create]
     before_action :set_stations, only: [:station]
 
@@ -28,6 +28,11 @@ module Ship
     end
 
     def station
+    end
+
+    def item
+      @item.address = @address
+      @item.save
     end
 
     private

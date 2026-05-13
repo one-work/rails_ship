@@ -41,14 +41,13 @@ Rails.application.routes.draw do
         collection do
           post :select
           post :index
-          get :cart
           get :station
-          post :order
-          post :order_new
-          post :order_create
           post :fork
           post :wechat
           post :program
+        end
+        member do
+          post :item
         end
       end
     end
