@@ -262,6 +262,10 @@ zh:
           title: 选择地址
         new:
           title: 新增地址
+      item:
+        addresses:
+          index:
+            title: 交割地址
     our:
       boxes:
         index:
