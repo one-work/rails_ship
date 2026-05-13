@@ -36,6 +36,22 @@ Rails.application.routes.draw do
         end
       end
     end
+    resources :items, only: [] do
+      resources :addresses, controller: 'item/addresses' do
+        collection do
+          post :select
+          post :index
+          get :cart
+          get :station
+          post :order
+          post :order_new
+          post :order_create
+          post :fork
+          post :wechat
+          post :program
+        end
+      end
+    end
   end
 
   namespace :ship, defaults: { business: 'ship' } do
