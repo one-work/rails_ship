@@ -40,7 +40,7 @@ Rails.application.routes.draw do
       resources :addresses, controller: 'item/addresses' do
         collection do
           post :select
-          post :index
+          post 'list' => :index
           get :station
           post :fork
           post :wechat
