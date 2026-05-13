@@ -33,6 +33,8 @@ module Ship
     def item
       @item.address = @address
       @item.save
+
+      index
     end
 
     private
