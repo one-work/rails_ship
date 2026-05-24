@@ -92,8 +92,7 @@ module Ship
       @address.source = 'program'
       @address.save
 
-      organ = Organ.find params[:organ_id]
-      render json: { url: url_for(action: 'edit', id: @address.id, auth_token: Current.session.once_token, host: organ.host) }
+      render json: { url: url_for(action: 'edit', id: @address.id, auth_token: Current.session.once_token, **params.permit(:host)) }
     end
 
     def join

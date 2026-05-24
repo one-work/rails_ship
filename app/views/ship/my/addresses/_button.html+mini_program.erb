@@ -8,7 +8,8 @@
         only_path: false,
         auth_token: Current.session.once_token,
         host: ENV['HOST']
-      )
+      ),
+      host: current_organ&.host
     }.to_json
   %>"
   data-action="click->mini-program#navTo"
