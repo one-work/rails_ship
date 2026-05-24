@@ -2,21 +2,10 @@ module Ship
   class My::LocationsController < My::BaseController
     before_action :set_line
     before_action :set_location, only: [:show, :edit, :update, :destroy]
+    before_action :set_new_location, only: [:new, :create]
 
     def index
       @locations = Location.page(params[:page])
-    end
-
-    def new
-      @location = @line.locations.build
-    end
-
-    def create
-      @location = Location.new(location_params)
-
-      unless @location.save
-        render :new, locals: { model: @location }, status: :unprocessable_entity
-      end
     end
 
     private
@@ -26,6 +15,10 @@ module Ship
 
     def set_location
       @location = Location.find(params[:id])
+    end
+
+    def set_new_location
+      @location = @line.locations.build(location_params)
     end
 
     def location_params
