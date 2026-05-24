@@ -1,0 +1,8 @@
+<div
+  data-controller="wechat"
+  data-wechat-url-value="<%= url_for(action: 'fork', only_path: false) %>"
+  data-action="click->wechat#openAddress"
+  class="button mx-3"
+>
+  <%= t('.new.title') %>
+</div>

@@ -1,0 +1,18 @@
+<div
+  data-controller="mini-program"
+  data-mini-program-url-value="/pages/addresses/index"
+  data-mini-program-data-value="<%=
+    {
+      url: url_for(
+        action: 'program',
+        only_path: false,
+        auth_token: Current.session.once_token,
+        host: ENV['HOST']
+      )
+    }.to_json
+  %>"
+  data-action="click->mini-program#navTo"
+  class="button mx-3"
+>
+  <%= t('.new.title') %>
+</div>
