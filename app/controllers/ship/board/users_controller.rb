@@ -3,7 +3,7 @@ module Ship
 
     def update
       if current_user
-        current_user.update geo: RGeo::Geos.factory(srid: 4326).point(params[:longitude], params[:latitude])
+        current_user.set_geo!(params[:longitude], params[:latitude])
       end
     end
 
