@@ -3,7 +3,7 @@ module Ship
     extend ActiveSupport::Concern
 
     included do
-      attribute :geo, :point
+      attribute :geo, :st_point, srid: 4326, geographic: true
 
       has_one :driver, class_name: 'Ship::Driver'
 
