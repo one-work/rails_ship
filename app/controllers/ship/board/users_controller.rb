@@ -2,8 +2,9 @@ module Ship
   class Board::UsersController < Board::BaseController
 
     def update
-      current_user.geo = "POINT (#{params[:longitude].to_f} #{params[:latitude].to_f})"
-      current_user.save!
+      if current_user
+        current_user.update geo: RGeo::Geos.factory(srid: 4326).point(params[:longitude], params[:latitude])
+      end
     end
 
     private
