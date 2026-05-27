@@ -8,11 +8,7 @@ module Ship
       attribute :full, :string
       attribute :published, :boolean, default: true
       attribute :popular, :boolean, default: false
-      if connection.adapter_name == 'PostgreSQL'
-        attribute :names, :string, array: true
-      else
-        attribute :names, :json, default: []
-      end
+      attribute :names, :json, default: []
       attribute :level, :integer
       attribute :timezone, :string
       attribute :locale, :string
