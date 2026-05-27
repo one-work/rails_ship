@@ -7,12 +7,5 @@ module Ship
       end
     end
 
-    private
-    def favorite_params
-      params.fetch(:favorite, {}).permit(
-        :remark
-      )
-    end
-
   end
 end

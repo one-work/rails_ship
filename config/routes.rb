@@ -327,6 +327,7 @@ Rails.application.routes.draw do
     end
     namespace :board, defaults: { namespace: 'board' } do
       resource :users
+      resource :organs
     end
     namespace :my, defaults: { namespace: 'my' } do
       concerns :my_ship
