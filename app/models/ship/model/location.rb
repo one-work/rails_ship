@@ -10,7 +10,7 @@ module Ship
       attribute :cityname, :string
       attribute :lat, :decimal, precision: 10, scale: 8
       attribute :lng, :decimal, precision: 11, scale: 8
-      if connection.adapter_name == 'PostgreSQL'
+      if ['PostgreSQL', 'PostGIS'].include?(connection.adapter_name)
         attribute :coordinate, :point
       else
         attribute :coordinate, :string
