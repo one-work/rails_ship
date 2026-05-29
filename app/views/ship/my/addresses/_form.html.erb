@@ -3,6 +3,9 @@
 <%= render partial: 'outer_select', locals: { f: f, outer: 'area', node: @address.area } %>
 <div class="field is-horizontal">
   <div class="field-label"></div>
-  <div id="google_maps" class="field-body flex-direction-column" style="height: 200px"></div>
+  <div
+    data-controller="qq-map"
+    class="field-body flex-direction-column" style="height: 200px"
+  ></div>
 </div>
 <%= f.text_area :detail %>
