@@ -8,11 +8,5 @@
     <% else %>
       <%= render partial: 'com/nodes/outer_options', locals: { f: f, node: node, depth: 0, outer: outer } %>
     <% end %>
-    <div class="field has-addons has-addons-middle">
-      <%= link_to({ action: 'select' }, data: { controller: 'common', action: 'common#link' }) do %>
-        <%= svg_tag 'map-pin' %>
-        <span>获取定位</span>
-      <% end %>
-    </div>
   </div>
 </div>
