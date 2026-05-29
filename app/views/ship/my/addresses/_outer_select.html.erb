@@ -10,8 +10,8 @@
     <% end %>
     <div class="field has-addons has-addons-middle">
       <%= link_to({ action: 'select' }, data: { controller: 'common', action: 'common#link' }) do %>
-        <i class="fa-solid fa-map-marker-alt"></i>
-        <span class="pl-1">获取定位</span>
+        <%= svg_tag 'map-pin' %>
+        <span>获取定位</span>
       <% end %>
     </div>
   </div>
