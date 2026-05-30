@@ -6,12 +6,16 @@
   <div
     data-controller="amap"
     data-amap-key-value="7581fc92c99a88bc1c3a05fa8c55f2ac"
+    data-amap-code-value="e9bfe33eb20e7de78fa2cfded6323fe4"
     data-amap-geo-value="<%= @ip_geo.to_json %>"
     class="field-body flex-direction-column" style="min-height: 200px"
   >
     <%= f.hidden_field :geo, data: { amap_target: 'input' } %>
     <p>你好</p>
     <div data-amap-target="container" class="is-fullheight"></div>
+    <div>
+      <input id="tipinput" class="input">
+    </div>
   </div>
 </div>
 <%= f.text_area :detail %>
