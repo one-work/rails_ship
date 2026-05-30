@@ -9,6 +9,7 @@
     data-amap-geo-value="<%= @ip_geo.to_json %>"
     class="field-body flex-direction-column" style="min-height: 200px"
   >
+    <%= f.hidden_field :geo, data: { amap_target: 'input' } %>
     <p>你好</p>
     <div data-amap-target="container" class="is-fullheight"></div>
   </div>

@@ -26,14 +26,14 @@ module Ship
     end
 
     def new
-      r = QqMapHelper.ip(request.remote_ip)
+      r = {}# QqMapHelper.ip(request.remote_ip)
       area_params = r['ad_info']
       if area_params
         area = Area.sure_find_full [area_params['province'], area_params['city'], area_params['district'].presence].compact
       else
         area = Area.new
       end
-      @ip_geo = r['location']
+      @ip_geo = {"lat" => 28.22778, "lng" => 112.93886}
       @address.area = area
     end
 
