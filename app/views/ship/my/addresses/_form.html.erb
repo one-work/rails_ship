@@ -4,12 +4,12 @@
 <div class="field is-horizontal">
   <div class="field-label"></div>
   <div
-    data-controller="qq-map"
-    data-qq-map-geo-value="<%= current_user.geo_hash.to_json %>"
+    data-controller="amap"
+    data-amap-geo-value="<%= current_user.geo_hash.to_json %>"
     class="field-body flex-direction-column" style="min-height: 200px"
   >
     <p>你好</p>
-    <div data-qq-map-target="map"></div>
+    <div id="container"></div>
   </div>
 </div>
 <%= f.text_area :detail %>
