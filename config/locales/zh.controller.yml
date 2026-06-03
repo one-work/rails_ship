@@ -269,6 +269,10 @@ zh:
         addresses:
           index:
             title: 服务地址
+    board:
+      addresses:
+        index:
+          title: 地址
     our:
       boxes:
         index:
