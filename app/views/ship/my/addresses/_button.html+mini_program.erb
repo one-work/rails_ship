@@ -7,9 +7,9 @@
         action: 'program',
         only_path: false,
         auth_token: Current.session.once_token,
-        host: ENV['HOST']
-      ),
-      host: current_organ&.host
+        host: ENV['HOST'],
+        organ_id: current_organ.id
+      )
     }.to_json
   %>"
   data-action="click->mini-program#navTo"

@@ -85,7 +85,7 @@ module Ship
     end
 
     def program
-      @address.organ_id = params[:organ_id]
+      @address.organ_id = current_organ
       @address.contact_person = params['userName']
       @address.tel = params['telNumber']
       @address.detail = params['detailInfo']
@@ -93,7 +93,7 @@ module Ship
       @address.source = 'program'
       @address.save
 
-      render json: { url: url_for(action: 'edit', id: @address.id, auth_token: Current.session.once_token, **params.permit(:host)) }
+      render json: { url: url_for(action: 'edit', id: @address.id, auth_token: Current.session.once_token, host: current_organ.host) }
     end
 
     def join
