@@ -1,4 +1,4 @@
-<div id="box" class="card">
+<div id="box" class="card as-head">
   <div class="card-header">
     <%= link_to '返回', { action: 'index' }, class: 'button is-borderless' %>
     <%= button_to({ action: 'destroy', id: model.id }, method: :delete, data: { turbo_confirm: t('.destroy.confirm') }, class: 'button is-danger') do %>
