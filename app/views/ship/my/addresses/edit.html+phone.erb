@@ -1,22 +1,11 @@
-<div class="box is-padding-less">
-  <div class="box-header">
-    <div class="level is-mobile">
-      <div class="level-left">
-        <div class="level-item">
-          <%= link_to '返回', { action: 'index' }, class: 'weui-btn weui-btn_mini weui-btn_default' %>
-        </div>
-      </div>
-      <div class="level-right mt-0">
-        <div class="level-item">
-          <%= button_to({ action: 'destroy', id: model.id }, method: :delete, data: { turbo_confirm: t('.destroy.confirm') }, class: 'weui-btn weui-btn_mini weui-btn_danger', form: { class: '' }) do %>
-            <span>删除</span>
-          <% end %>
-        </div>
-      </div>
-    </div>
+<div id="box" class="card">
+  <div class="card-header">
+    <%= link_to '返回', { action: 'index' }, class: 'button is-borderless' %>
+    <%= button_to({ action: 'destroy', id: model.id }, method: :delete, data: { turbo_confirm: t('.destroy.confirm') }, class: 'button is-danger') do %>
+      <span>删除</span>
+    <% end %>
   </div>
-  <div class="weui-panel__bd">
+  <div class="card-content">
     <%= render partial: 'edit_form', locals: { model: model } %>
   </div>
 </div>
-
