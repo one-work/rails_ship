@@ -5,8 +5,8 @@
   <div class="field-label"></div>
   <div
     data-controller="amap"
-    data-amap-key-value="7581fc92c99a88bc1c3a05fa8c55f2ac"
-    data-amap-code-value="e9bfe33eb20e7de78fa2cfded6323fe4"
+    data-amap-key-value="<%= Rails.app.creds.require('amap', 'key') %>"
+    data-amap-code-value="<%= Rails.app.creds.require('amap', 'code') %>"
     data-amap-geo-value="<%= @ip_geo.to_json %>"
     class="field-body flex-direction-column"
   >
