@@ -3,5 +3,5 @@
 <%= f.number_field :width, required: true %>
 <%= f.number_field :length, required: true %>
 <%= f.number_field :height, required: true %>
-<%= f.file_field :logo %>
+<%= render partial: 'com/attachments/list_field', locals: { target: f.object.logo, f: f } %>
 <%= render 'com/attachments/list_field', target: f.object.covers, f: f %>

@@ -1,4 +1,4 @@
 <%= f.number_field :price %>
 <%= f.number_field :invest_ratio, min: 0, max: 1 %>
-<%= f.file_field :logo %>
+<%= render partial: 'com/attachments/list_field', locals: { target: f.object.logo, f: f } %>
 <%= f.select :rent_unit, options_for_select(Ship::BoxHost.options_i18n(:rent_unit), f.object.rent_unit) %>
