@@ -3,7 +3,7 @@ module TencentHelper
 
   def client
     return @client if defined? @client
-    tencent = Rails.application.credentials.tencent
+    tencent = Rails.app.credentials.tencent
     cre = TencentCloud::Common::Credential.new(tencent[:id], tencent[:key])
     @client = TencentCloud::Ocr::V20181119::Client.new(cre, 'ap-guangzhou')
   end
