@@ -1,6 +1,6 @@
 module QqMapHelper
-  KEY = Rails.app.creds.require(:qq_map, :key)
-  SK = Rails.app.creds.require(:qq_map, :secret)
+  KEY = Rails.app.creds.option(:qq_map, :key, default: nil)
+  SK = Rails.app.creds.option(:qq_map, :secret, default: nil)
   extend CommonApi
   extend self
 
