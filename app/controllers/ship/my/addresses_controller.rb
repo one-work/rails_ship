@@ -4,7 +4,7 @@ module Ship
     before_action :set_new_address, only: [:new, :create, :order_new, :order_create, :from_new, :from_create]
     before_action :set_new_address_wechat, only: [:wechat]
     before_action :set_new_address_program, only: [:program]
-    skip_before_action :verify_authenticity_token, only: [:program] if whether_filter(:verify_authenticity_token)
+    skip_forgery_protection only: [:program] if whether_filter(:verify_authenticity_token)
 
     def index
       q_params = {}
