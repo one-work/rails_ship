@@ -57,7 +57,7 @@ module Ship
     end
 
     def address_params
-      params.fetch(:address, {}).permit(
+      _p = params.fetch(:address, {}).permit(
         :station_id,
         :area_id,
         :contact_person,
@@ -67,6 +67,7 @@ module Ship
         :room,
         :area_ancestors
       )
+      _p.merge! default_form_params
     end
 
   end

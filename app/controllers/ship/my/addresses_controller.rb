@@ -76,8 +76,6 @@ module Ship
 
     def wechat
       @address.assign_attributes address_params
-      logger.debug "===================#{@address.organ_id}, #{address_params}"
-      logger.debug "====--------#{default_form_params}"
       @address.source = 'wechat'
       @address.save
 
@@ -142,8 +140,6 @@ module Ship
         :principal
       )
       _p.merge! default_form_params
-      logger.debug "----------------------#{p}"
-      _p
     end
 
   end
