@@ -76,6 +76,7 @@ module Ship
 
     def wechat
       @address.assign_attributes address_params
+      logger.debug "===================#{@address.organ_id}"
       @address.source = 'wechat'
       @address.save
 
