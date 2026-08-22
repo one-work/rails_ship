@@ -142,6 +142,8 @@ module Ship
         :principal
       )
       _p.merge! default_form_params
+      logger.debug "----------------------#{p}"
+      _p
     end
 
   end
