@@ -1,0 +1,16 @@
+<div id="tr_<%= model.id %>" class="media">
+  <%= link_to({ action: 'show', id: model.id }, class: 'media-content') do %>
+    <%= yield %>
+  <% end %>
+  <div class="media-right as-x">
+    <%= button_to({ action: 'actions', id: model.id }, class: 'button is-borderless') do %>
+      <%= svg_tag 'ellipsis-vertical' %>
+    <% end %>
+    <% if model.principal %>
+      <span class="tag">
+        <%= svg_tag 'circle-check', class: 'icon text-success' %>
+        <span>默认地址</span>
+      </span>
+    <% end %>
+  </div>
+</div>
