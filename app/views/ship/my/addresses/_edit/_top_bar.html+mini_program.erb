@@ -1,5 +1,5 @@
 <div class="as-bar">
-  <%= link_to({ action: 'index' }, class: 'px-5') do %>
+  <%= link_to({ action: 'index' }, data: { turbo_action: 'replace' }, class: 'px-5') do %>
     <%= svg_tag 'angle-left', kind: 'regular', class: 'icon is-small text-link' %>
   <% end %>
   <div class="bar-title"><%= t('.title') %></div>
