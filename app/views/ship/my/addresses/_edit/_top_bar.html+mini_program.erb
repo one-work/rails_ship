@@ -1,0 +1,9 @@
+<div class="as-bar">
+  <%= link_to({ action: 'index' }, class: 'px-5') do %>
+    <%= svg_tag 'angle-left', kind: 'regular', class: 'icon is-small text-link' %>
+  <% end %>
+  <div class="bar-title"><%= t('.title') %></div>
+  <button data-controller="history" data-action="history#root" class="px-5">
+    <%= svg_tag 'user', kind: 'regular', class: 'icon is-small text-link' %>
+  </button>
+</div>
