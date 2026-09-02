@@ -1,0 +1,5 @@
+<div class="buttons as-bottom">
+  <%= button_to({ action: 'destroy', id: @address.id }, method: :delete, data: { turbo_confirm: t('.destroy.confirm') }, class: 'button is-danger') do %>
+    <span>删除</span>
+  <% end %>
+</div>
