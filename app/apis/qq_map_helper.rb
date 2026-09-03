@@ -18,6 +18,16 @@ module QqMapHelper
     end
   end
 
+  def address(addr)
+    result = get 'ws/geocoder/v1', address: addr
+    if result['status'] == 0
+      result['result']
+    else
+      Rails.logger.error(result)
+      result
+    end
+  end
+
   def ip(ip)
     result = get 'ws/location/v1/ip', ip: ip
     if result['status'] == 0

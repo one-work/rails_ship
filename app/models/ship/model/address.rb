@@ -12,6 +12,7 @@ module Ship
       attribute :cached_key, :string
       attribute :principal, :boolean, default: false
       attribute :pending_count, :integer, default: 0, comment: '待发货'
+      attribute :geo, :st_point, srid: 4326, geographic: true
 
       has_taxons :area
       belongs_to :area
@@ -27,6 +28,7 @@ module Ship
 
       before_validation :sync_cached_key
       after_update :set_principal, if: -> { principal? && saved_change_to_principal? }
+      after_save_commit :set_geo_by_address!, if: -> { saved_change_to_detail? }
     end
 
     def sync_cached_key
@@ -43,6 +45,15 @@ module Ship
 
     def set_principal
       self.class.where.not(id: self.id).where(user_id: self.user_id, member_id: self.member_id).update_all(principal: false)
+    end
+
+    def set_geo_by_address!
+      addr = "#{area.full_name}#{detail}"
+      r = QqMapHelper.address addr
+      location = r.fetch('location', {})
+      if location.present?
+        self.update geo: RGeo::Geos.factory(srid: 4326).point(location['lng'], location['lat'])
+      end
     end
 
   end
