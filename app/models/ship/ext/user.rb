@@ -4,7 +4,7 @@ module Ship
 
     included do
       has_one :driver, class_name: 'Ship::Driver'
-      has_one :address_principal, -> { where(principal: true) }, class: 'Ship::Address'
+      has_one :address_principal, -> { where(principal: true) }, class_name: 'Ship::Address'
 
       has_many :addresses, class_name: 'Ship::Address'
       has_many :cars, class_name: 'Ship::Car'
