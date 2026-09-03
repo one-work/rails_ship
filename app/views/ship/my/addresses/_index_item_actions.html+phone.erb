@@ -1,5 +1,5 @@
 <div id="tr_<%= model.id %>" class="media">
-  <%= link_to({ action: 'show', id: model.id }, class: 'media-content') do %>
+  <%= button_to({ action: 'update', id: model.id }, params: { 'address[principal]': true }, class: 'media-content') do %>
     <%= yield %>
   <% end %>
   <div class="media-right as-x">
