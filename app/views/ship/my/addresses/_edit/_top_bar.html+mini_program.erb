@@ -1,7 +1,7 @@
 <div class="as-bar">
-  <%= link_to({ action: 'index' }, data: { turbo_action: 'replace' }, class: 'px-5') do %>
+  <button id="history-button" data-controller="history" data-action="history#back" class="px-5">
     <%= svg_tag 'angle-left', kind: 'regular', class: 'icon is-small text-link' %>
-  <% end %>
+  </button>
   <div class="bar-title"><%= t('.title') %></div>
   <button data-controller="history" data-action="history#root" class="px-5">
     <%= svg_tag 'user', kind: 'regular', class: 'icon is-small text-link' %>
