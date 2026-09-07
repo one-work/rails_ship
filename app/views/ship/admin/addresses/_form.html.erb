@@ -3,4 +3,4 @@
 <%= render partial: 'com/nodes/outer_select', locals: { f: f, outer: 'area', node: f.object.area } %>
 <%= render partial: 'station_search', locals: { f: f } %>
 <%= f.text_field :detail, autocomplete: 'off' %>
-<%= f.check_box :principal, origin: { label: 'weui-cell__bd' } %>
+<%= f.checkbox :principal, origin: { label: 'weui-cell__bd' } %>

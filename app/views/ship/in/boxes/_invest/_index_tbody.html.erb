@@ -9,7 +9,7 @@
 </td>
 <td>
   <%= form_with theme: 'switch', model: model, url: { action: 'update', id: model.id }, data: { controller: 'input' } do |f| %>
-    <%= f.check_box :rentable, data: { action: 'input#submit' }, id: nil %>
+    <%= f.checkbox :rentable, data: { action: 'input#submit' }, id: nil %>
   <% end %>
 </td>
 <td><%= link_to model.rents_count, { controller: 'out/rents', box_id: model.id } %></td>

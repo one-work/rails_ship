@@ -5,11 +5,11 @@
 </td>
 <td>
   <%= form_with theme: 'switch', model: model, url: { action: 'update', id: model.id }, data: { controller: 'input' } do |f| %>
-    <%= f.check_box :popular, data: { action: 'input#submit' }, id: nil %>
+    <%= f.checkbox :popular, data: { action: 'input#submit' }, id: nil %>
   <% end %>
 </td>
 <td>
   <%= form_with theme: 'switch', model: model, url: { action: 'update', id: model.id }, data: { controller: 'input' } do |f| %>
-    <%= f.check_box :published, data: { action: 'input#submit' }, id: nil %>
+    <%= f.checkbox :published, data: { action: 'input#submit' }, id: nil %>
   <% end %>
 </td>
