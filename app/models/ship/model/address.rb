@@ -12,7 +12,9 @@ module Ship
       attribute :cached_key, :string
       attribute :principal, :boolean, default: false
       attribute :pending_count, :integer, default: 0, comment: '待发货'
-      attribute :geo, :st_point, srid: 4326, geographic: true
+      if ['PostGIS'].include?(connection.adapter_name)
+        attribute :geo, :st_point, srid: 4326, geographic: true
+      end
 
       has_taxons :area
       belongs_to :area
