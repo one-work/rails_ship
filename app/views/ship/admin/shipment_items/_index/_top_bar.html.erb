@@ -1,10 +1,10 @@
 <div class="as-bar">
   <% if params[:station_id] %>
-    <%= link_to({ controller: 'stations', action: 'shipments', id: params[:station_id] }, class: 'px-4') do %>
+    <%= link_to({ controller: 'stations', action: 'shipments', id: params[:station_id] }, class: 'left') do %>
       <%= svg_tag 'angle-left', kind: 'regular' %>
     <% end %>
   <% else %>
-    <%= link_to({ controller: 'shipments' }, class: 'px-4') do %>
+    <%= link_to({ controller: 'shipments' }, class: 'left') do %>
       <%= svg_tag 'angle-left', kind: 'regular' %>
     <% end %>
   <% end %>
@@ -12,5 +12,5 @@
     <i class="fa-solid fa-person-dolly-empty text-warning"></i>
     <span class="pl-1"><%= t('.title') %></span>
   </div>
-  <i class="px-5"></i>
+  <i class="right"></i>
 </div>
