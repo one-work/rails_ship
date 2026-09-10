@@ -68,8 +68,7 @@ module Ship
       self.from_station_id ||= from_address.station_id
     end
 
-    def to_cpcl
-      cpcl = BaseCpcl.new
+    def to_cpcl(cpcl, aim: 'label')
       cpcl.text "#{from_station&.name || from_address&.area&.full_name} -> #{station&.name || address&.area&.full_name}"
       cpcl.text_bold "#{address.contact}", font: 7, size: 1, line_add: false
       cpcl.text "#{address.tel}", x: 24 * (address.contact.size + 1)
