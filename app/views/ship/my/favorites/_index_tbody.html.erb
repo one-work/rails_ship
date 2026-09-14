@@ -1,5 +1,5 @@
 <div class="media-left">
-  <%= image_tag model.driver.license, class: 'image is-64x64' if model.driver.license.attached? %>
+  <%= image_tag model.driver.license, class: 'image is-radius is-64x64' if model.driver.license.attached? %>
 </div>
 <div class="weui-cell__bd weui-cell_primary">
   <span><%= model.driver.name %></span>

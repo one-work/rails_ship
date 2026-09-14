@@ -6,7 +6,7 @@
   <% @cars.each do |car| %>
     <%= link_to({ action: 'show', id: car.id }, class: 'media') do %>
       <div class="media-left">
-        <%= image_tag car.registration, class: 'image is-64x64' if car.registration.attached? %>
+        <%= image_tag car.registration, class: 'image is-radius is-64x64' if car.registration.attached? %>
       </div>
       <div class="media-content">
         <h4 class="weui-media-box__title"><%= car.number %></h4>

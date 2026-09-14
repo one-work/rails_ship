@@ -1,6 +1,6 @@
 <div class="media" id="production_<%= model.id %>">
   <%= link_to({ action: 'show', id: model.id }, text: true, class: 'weui-media-box__hd') do %>
-    <%= image_tag model.box_specification.logo, class: 'image is-64x64' if model.box_specification.logo.attached? %>
+    <%= image_tag model.box_specification.logo, class: 'image is-radius is-64x64' if model.box_specification.logo.attached? %>
   <% end %>
   <div class="weui-media-box__bd flex flex-direction-column">
     <%= link_to({ action: 'show', id: model.id }, text: true, class: 'weui-media-box__title') do %>
