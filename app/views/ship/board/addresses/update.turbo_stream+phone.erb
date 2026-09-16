@@ -1,1 +1,2 @@
-<%= turbo_stream.stimulus 'history-button', controller: 'history', action: 'back' %>
+<%# turbo_stream.stimulus 'history-button', controller: 'history', action: 'back' %>
+<%= turbo_stream.visit action: 'back' %>
