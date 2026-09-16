@@ -2,11 +2,11 @@
   <div class="weui-form-preview__bd">
     <div class="weui-form-preview__item">
       <label class="weui-form-preview__label"><%= Ship::Box.human_attribute_name(:code) %></label>
-      <div class="weui-form-preview__value" data-controller="clipboard">
+      <div data-controller="clipboard">
         <span data-clipboard-target="source"><%= @box.code %></span>
         <span data-action="click->clipboard#copy" class="tag is-badge is-danger">复制</span>
         <div data-clipboard-target="toast" class="tag is-badge is-success display-none">
-          <%= svg_tag 'check' %>
+          <%= svg_tag 'check', class: 'icon is-small' %>
         </div>
       </div>
     </div>
