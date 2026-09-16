@@ -22,6 +22,6 @@
       <%= svg_tag 'check', class: 'icon is-medium text-success' %>
       <p class="size-7 text-success">默认</p>
     <% end %>
-    <%= radio_button_tag 'cart[address_id]', model.id, model.id == @cart.address_id, data: { action: 'input#form' }, form: 'cart_address_form', class: 'toggle-check' %>
+    <%= radio_button_tag 'cart[address_id]', model.id, model.id == @cart.address_id, data: { action: 'click->input#form' }, form: 'cart_address_form', class: 'toggle-check' %>
   </span>
 </label>
