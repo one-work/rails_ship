@@ -1,5 +1,1 @@
-<% if @address.principal %>
-  <%= turbo_stream.stimulus 'history-button', controller: 'history', action: 'back' %>
-<% else %>
-  <%= turbo_stream.visit %>
-<% end %>
+<%= turbo_stream.stimulus 'history-button', controller: 'history', action: 'back' %>
