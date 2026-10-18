@@ -38,21 +38,14 @@
   </div>
   <% if @current_user.addresses.blank? %>
     <div
-      class="weui-panel__ft"
       data-controller="mini-program"
-      data-mini-program-url-value="/pages/profiled/addresses/index?url=<%= url_for(action: 'program', only_path: false) %>"
-      data-wechat-url-value="<%= url_for(action: 'fork', only_path: false) %>"
-      data-wechat-options-value="<%= current_wechat_app.js_config(request.original_url).to_json %>"
-      data-wechat-apis-value="<%= ['openAddress', 'getLocation', 'openLocation', 'scanQRCode'].to_json %>"
-      id="wechat_address"
+      data-mini-program-url-value="/pages/addresses/index"
+      data-mini-program-data-value="<%= { url: url_for(action: 'program', only_path: false) }.to_json %>"
+      class="media"
     >
-      <div class="weui-cells">
-        <div class="media" data-action="click->wechat#openAddress">
-          <div class="media-content"><%= t('.new.title') %></div>
-          <div class="media-right">
-            <%= svg_tag 'chevron-right' %>
-          </div>
-        </div>
+      <div class="media-content"><%= t('.new.title') %></div>
+      <div class="media-right">
+        <%= svg_tag 'chevron-right' %>
       </div>
     </div>
   <% end %>
