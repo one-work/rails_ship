@@ -1,5 +1,5 @@
 module Ship
-  class Agent::AddressesController < Ship::Admin::AddressesController
+  class Agent::Cart::AddressesController < My::Cart::AddressesController
     before_action :set_cart
     before_action :set_address, only: [:show, :edit, :update, :destroy, :actions]
     before_action :set_new_address, only: [:new, :create]
@@ -16,15 +16,7 @@ module Ship
       @address = current_user.addresses.build(station_id: params[:station_id])
       @address.area = Area.new
       @address.contact = current_user.name
-      @address.tel = current_account.identity if current_account.is_a?(Auth::MobileAccount)
-    end
-
-    def create
-      @cart.address = @address
-      @address.class.transaction do
-        @address.save!
-        @cart.save!
-      end
+      @address.tel = current_account.identity if current_account.is_a?(Auth::Account)
     end
 
     def station
@@ -48,7 +40,7 @@ module Ship
     end
 
     def set_new_address
-      @address = current_user.addresses.build(address_params)
+      @address = @cart.build_address(address_params)
     end
 
     def set_address
@@ -58,12 +50,12 @@ module Ship
     def address_params
       params.fetch(:address, {}).permit(
         :station_id,
-        :area_id,
-        :contact,
+        :contact_person,
         :tel,
         :detail,
         :floor,
-        :room
+        :room,
+        :area_ancestors
       )
     end
 

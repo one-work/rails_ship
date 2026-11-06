@@ -1,0 +1,5 @@
+<%= f.text_field :contact_person, autocomplete: 'off' %>
+<%= f.text_field :tel, autocomplete: 'off' %>
+<%= render partial: 'com/nodes/outer_select', locals: { f: f, outer: 'area', node: f.object.area } %>
+<%= f.text_field :detail, autocomplete: 'off' %>
+<%= f.checkbox :principal, origin: { label: 'weui-cell__bd' } %>

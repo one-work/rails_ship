@@ -1,23 +1,23 @@
 Rails.app.routes.draw do
   concern :my_ship do
     resources :addresses do
-        collection do
-          get :list
-          post :select
-          post :fork
-          post :wechat
-          post :program
-          post :order
-          post :order_from
-          post :order_new
-          post :order_create
-          post :from_new
-          post :from_create
-        end
-        member do
-          get :join
-        end
+      collection do
+        get :list
+        post :select
+        post :fork
+        post :wechat
+        post :program
+        post :order
+        post :order_from
+        post :order_new
+        post :order_create
+        post :from_new
+        post :from_create
       end
+      member do
+        get :join
+      end
+    end
     resources :carts, only: [] do
       resources :addresses, controller: 'cart/addresses' do
         collection do
