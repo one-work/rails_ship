@@ -6,6 +6,7 @@ module Ship
     before_action :set_new_address, only: [:new, :create]
     before_action :set_geo, only: [:new, :edit]
     before_action :set_stations, only: [:station]
+    skip_before_action :require_user
 
     def index
       q_params = {}
