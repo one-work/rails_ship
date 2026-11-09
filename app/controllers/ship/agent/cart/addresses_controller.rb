@@ -1,5 +1,6 @@
 module Ship
   class Agent::Cart::AddressesController < My::Cart::AddressesController
+    include Org::Controller::Admin
     before_action :set_cart
     before_action :set_address, only: [:show, :edit, :update, :destroy, :actions]
     before_action :set_new_address, only: [:new, :create]
