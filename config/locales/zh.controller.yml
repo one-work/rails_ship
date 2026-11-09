@@ -281,3 +281,8 @@ zh:
       favorites:
         index:
           title: 熟客
+    agent:
+      cart:
+        addresses:
+          new:
+            title: 绑定收货地址

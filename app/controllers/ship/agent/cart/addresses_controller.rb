@@ -3,6 +3,7 @@ module Ship
     before_action :set_cart
     before_action :set_address, only: [:show, :edit, :update, :destroy, :actions]
     before_action :set_new_address, only: [:new, :create]
+    before_action :set_geo, only: [:new]
     before_action :set_stations, only: [:station]
 
     def index
@@ -41,6 +42,10 @@ module Ship
 
     def set_new_address
       @address = @cart.build_address(address_params)
+    end
+
+    def set_geo
+      @ip_geo = { lat: 28.22778, lng: 112.93886 }
     end
 
     def set_address
