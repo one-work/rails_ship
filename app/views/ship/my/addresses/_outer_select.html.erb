@@ -1,12 +1,8 @@
 <div class="field is-horizontal">
   <%= f.label "#{outer}_id" %>
   <div class="field-body">
-    <% if node&.ancestors.present? %>
-      <% node.ancestors.reverse_each do |node| %>
-        <%= render partial: 'com/nodes/outer_options', locals: { f: f, node: node, depth: node.depth, outer: outer } %>
-      <% end %>
-    <% else %>
-      <%= render partial: 'com/nodes/outer_options', locals: { f: f, node: node, depth: 0, outer: outer } %>
+    <% node.self_and_ancestors.reverse_each do |node| %>
+      <%= render partial: 'com/nodes/outer_options', locals: { f: f, node: node, depth: node.depth, outer: outer } %>
     <% end %>
   </div>
 </div>

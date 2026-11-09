@@ -1,0 +1,14 @@
+<div id="address_<%= address.id %>">
+  <p>
+    <span><%= address.contact_person %></span>
+    <span><%= address.tel %></span>
+  </p>
+  <p class="size-7">
+    <span><%= address.area.full_name %></span>
+    <span><%= address.station&.name %></span>
+    <span><%= address.detail %></span>
+  </p>
+  <%= button_to({ controller: 'ship/agent/cart/addresses', action: 'edit', cart_id: cart_id, id: address.id }) do %>
+    <%= svg_tag 'pencil' %>
+  <% end %>
+</div>

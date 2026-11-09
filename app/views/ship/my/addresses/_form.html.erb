@@ -1,6 +1,6 @@
 <%= f.text_field :contact_person, autofocus: true %>
 <%= f.telephone_field :tel %>
-<%= render partial: 'outer_select', locals: { f: f, outer: 'area', node: @address.area } %>
+<%= render partial: 'outer_select', locals: { f: f, outer: 'area', node: @address.area } if @address.area %>
 <div class="field is-horizontal">
   <div class="field-label"></div>
   <div

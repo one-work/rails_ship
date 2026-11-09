@@ -1,0 +1,1 @@
+<%= turbo_stream.update "address_#{@address.id}", partial: 'address_detail', locals: { address: @address, cart_id: params[:cart_id] } %>

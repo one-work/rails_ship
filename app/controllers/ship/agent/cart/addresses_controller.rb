@@ -3,7 +3,7 @@ module Ship
     before_action :set_cart
     before_action :set_address, only: [:show, :edit, :update, :destroy, :actions]
     before_action :set_new_address, only: [:new, :create]
-    before_action :set_geo, only: [:new]
+    before_action :set_geo, only: [:new, :edit]
     before_action :set_stations, only: [:station]
 
     def index
