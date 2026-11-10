@@ -38,41 +38,25 @@ module AMapHelper
     end
   end
 
-  def districts
-    result = get 'v3/config/district'
-    if result['status'] == 1
-      result['districts']
+  def districts(keywords = '')
+    result = get 'v3/config/district', keywords: keywords, subdistrict: 3
+    if result['status'] == '1'
+      result['districts'][0]
     else
       Rails.logger.error(result)
       result
     end
   end
 
-  def sync_to_areas
-    results = districts
-    results[0].each do |result|
-      area = Ship::Area.find_or_initialize_by(full: result['fullname'])
-      area.name = result['name'] || result['fullname']
-      area.code = result['id']
-      area.save
-    end
-
-    results[1].each do |result|
-      area = Ship::Area.find_or_initialize_by(full: result['fullname'])
-      parent = Ship::Area.find_by(code: "#{result['id'][0..1]}0000")
+  def sync_to_areas(results = districts, parent = nil)
+    results.fetch('districts', []).each do |result|
+      area = Ship::Area.find_or_initialize_by(full: result['name'])
       area.parent = parent
-      area.name = result['name'] || result['fullname']
-      area.code = result['id']
+      area.name = result['name']
+      area.code = result['citycode']
       area.save
-    end
 
-    results[2].each do |result|
-      area = Ship::Area.find_or_initialize_by(full: result['fullname'])
-      parent = Ship::Area.find_by(code: "#{result['id'][0..3]}00")
-      area.parent = parent
-      area.name = result['name'] || result['fullname']
-      area.code = result['id']
-      area.save
+      sync_to_areas(result, area)
     end
   end
 
