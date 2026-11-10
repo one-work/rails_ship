@@ -20,6 +20,7 @@ module Ship
 
     def ai
       r = Address.parse(params[:content])
+      binding.b
     end
 
     def new
