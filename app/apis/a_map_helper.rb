@@ -1,11 +1,11 @@
-module QqMapHelper
-  KEY = Rails.app.creds.option(:qq_map, :key, default: nil)
-  SK = Rails.app.creds.option(:qq_map, :secret, default: nil)
+module AMapHelper
+  KEY = Rails.app.creds.option(:a_map, :key, default: nil)
+  SK = Rails.app.creds.option(:amap, :code, default: nil)
   extend CommonApi
   extend self
 
   def base_url
-    'https://apis.map.qq.com/'
+    'https://restapi.amap.com/'
   end
 
   def geocoder(lat:, lng:)
@@ -39,9 +39,9 @@ module QqMapHelper
   end
 
   def districts
-    result = get 'ws/district/v1/list'
-    if result['status'] == 0
-      result['result']
+    result = get 'v3/config/district'
+    if result['status'] == 1
+      result['districts']
     else
       Rails.logger.error(result)
       result
