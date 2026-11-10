@@ -1,0 +1,9 @@
+<%= form_with theme: 'modal', url: { action: 'ai' } do |f| %>
+  <%= render 'modal_header' %>
+  <section id="modal-card-body" class="modal-card-body">
+    <div class="form-horizontal">
+      <%= f.text_area :content %>
+    </div>
+  </section>
+  <%= f.submit %>
+<% end %>

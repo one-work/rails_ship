@@ -286,3 +286,5 @@ zh:
         addresses:
           new:
             title: 绑定收货地址
+          new_ai:
+            title: 地址解析

@@ -15,8 +15,11 @@ module Ship
       @addresses = current_member.agent_addresses.includes(:area).default_where(q_params).page(params[:page])
     end
 
-    def ai
+    def new_ai
+    end
 
+    def ai
+      r = Address.parse(params[:content])
     end
 
     def new
