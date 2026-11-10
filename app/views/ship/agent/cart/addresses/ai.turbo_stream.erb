@@ -1,0 +1,8 @@
+<%=
+  turbo_stream.replace(
+    'modal_form',
+    partial: 'new_modal_form',
+    layout: 'modal_form',
+    locals: { model: @address }
+  )
+%>

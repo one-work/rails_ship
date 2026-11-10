@@ -20,7 +20,14 @@ module Ship
 
     def ai
       r = Address.parse(params[:content])
-      binding.b
+      area = Area.sure_find r[:area]
+
+      @address = @cart.build_address(
+        contact_person: r[:contact_person],
+        tel: r[:tel],
+        detail: r[:detail],
+        area_id: area.id
+      )
     end
 
     def new

@@ -56,6 +56,7 @@ module Ship
       if location.present?
         self.update geo: RGeo::Geos.factory(srid: 4326).point(location['lng'], location['lat'])
       end
+    rescue
     end
 
     class_methods do
@@ -70,24 +71,31 @@ module Ship
 
       def parse_taobao(text)
         res = text.split('，')
+        items = res[2].split(' ')
         {
           contact_person: res[0],
           tel: res[1],
-          detail: res[2]
+          area: items[0..2],
+          detail: items[3..-1].join
         }
       end
 
       def parse_alibaba(text)
         map = {
-          '收件人' => :contact_person,
-          '联系方式' => :tel,
-          '收货地址'=> :address
+          contact_person: '收件人',
+          tel: '联系方式',
+          detail: '收货地址'
         }.freeze
 
-        map.each_with_object({}) do |(label, key), result|
+        result = map.each_with_object({}) do |(key, label), h|
           match = text.match(/【#{label}】[ ]*(.+?)(?=\n【|\z)/m)
-          result[key] = match[1].strip if match
+          h[key] = match[1].strip if match
         end
+
+        items = result[:detail].split(' ')
+        result[:area] = items[0..2]
+        result[:detail] = items[3..-1].join
+        result
       end
 
     end
