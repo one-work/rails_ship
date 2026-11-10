@@ -29,9 +29,9 @@ module AMapHelper
   end
 
   def ip(ip)
-    result = get 'ws/location/v1/ip', ip: ip
-    if result['status'] == 0
-      result['result']
+    result = get 'v3/ip', ip: ip
+    if result['status'] == '1'
+      result['city']
     else
       Rails.logger.error(result)
       result
