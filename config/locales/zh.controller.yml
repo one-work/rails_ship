@@ -288,3 +288,5 @@ zh:
             title: 绑定收货地址
           new_ai:
             title: 地址解析
+          ai:
+            title: 确认地址
