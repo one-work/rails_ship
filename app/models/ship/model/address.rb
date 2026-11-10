@@ -51,11 +51,45 @@ module Ship
 
     def set_geo_by_address!
       addr = "#{area.full_name}#{detail}"
-      r = QqMapHelper.address addr
+      r = AMapHelper.address addr
       location = r.fetch('location', {})
       if location.present?
         self.update geo: RGeo::Geos.factory(srid: 4326).point(location['lng'], location['lat'])
       end
+    end
+
+    class_methods do
+
+      def parse(content)
+        if content.start_with?('【收件人】')
+          parse_alibaba(content)
+        else
+          parse_taobao(content)
+        end
+      end
+
+      def parse_taobao(text)
+        res = text.split('，')
+        {
+          contact_person: res[0],
+          tel: res[1],
+          detail: res[2]
+        }
+      end
+
+      def parse_alibaba(text)
+        map = {
+          '收件人' => :contact_person,
+          '联系方式' => :tel,
+          '收货地址'=> :address
+        }.freeze
+
+        map.each_with_object({}) do |(label, key), result|
+          match = text.match(/【#{label}】[ ]*(.+?)(?=\n【|\z)/m)
+          result[key] = match[1].strip if match
+        end
+      end
+
     end
 
   end

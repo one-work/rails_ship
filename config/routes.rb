@@ -21,6 +21,7 @@ Rails.app.routes.draw do
     resources :carts, only: [] do
       resources :addresses, controller: 'cart/addresses' do
         collection do
+          post :ai
           post :select
           get :cart
           get :station

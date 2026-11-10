@@ -16,7 +16,7 @@ module Ship
     end
 
     def get_ip_detail
-      area = QqMapHelper.ip ip_address
+      area = AMapHelper.ip ip_address
       self.lat = area.dig('location', 'lat')
       self.lng = area.dig('location', 'lng')
       self.ip_city = area.dig('ad_info', 'city')

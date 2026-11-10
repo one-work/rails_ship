@@ -26,7 +26,7 @@ module Ship
     end
 
     def new
-      r = {}# QqMapHelper.ip(request.remote_ip)
+      r = {}# AMapHelper.ip(request.remote_ip)
       area_params = r['ad_info']
       if area_params
         area = Area.sure_find_full [area_params['province'], area_params['city'], area_params['district'].presence].compact
@@ -38,7 +38,7 @@ module Ship
     end
 
     def order_new
-      r = QqMapHelper.ip request.remote_ip
+      r = AMapHelper.ip request.remote_ip
       area_params = r['ad_info']
       if area_params
         area = Area.sure_find_full [area_params['province'], area_params['city'], area_params['district'].presence].compact

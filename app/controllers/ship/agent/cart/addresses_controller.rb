@@ -15,6 +15,10 @@ module Ship
       @addresses = current_member.agent_addresses.includes(:area).default_where(q_params).page(params[:page])
     end
 
+    def ai
+
+    end
+
     def new
       @address.area = Area.new
     end

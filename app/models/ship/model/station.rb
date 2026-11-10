@@ -33,7 +33,7 @@ module Ship
 
     # todo 依赖 rails profiled
     def geo
-      result = QqMapHelper.geocoder(lat: lat, lng: lng)
+      result = AMapHelper.geocoder(lat: lat, lng: lng)
       r = result['address_component']
       area = Area.sure_find [r['province'], r['city'], r['district']]
       self.area = area
