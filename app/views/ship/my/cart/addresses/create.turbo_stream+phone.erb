@@ -1,3 +1,1 @@
-<%= turbo_stream.append_body do %>
-  <div data-controller="visit" data-visit-url-value="<%= url_for(action: 'index', cart_id: params[:cart_id]) %>"></div>
-<% end %>
+<%= turbo_stream.visit url: url_for(controller: 'carts', action: 'show', id: params[:cart_id]) %>
