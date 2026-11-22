@@ -13,17 +13,17 @@
     </p>
   </div>
   <div class="media-right" data-controller="input">
+    <%= hidden_field_tag 'button', 'new', id: nil, form: 'new_order' %>
     <%=
       radio_button_tag(
         'order[from_address_id]',
         address.id,
         address.id.to_s == params[:from_address_id],
-        class: 'weui-check',
+        class: 'check',
         id: "address_id_#{address.id}",
         form: 'new_order',
         data: { action: 'input#form' }
       )
     %>
-    <span class="weui-icon-checked"></span>
   </div>
 </label>
