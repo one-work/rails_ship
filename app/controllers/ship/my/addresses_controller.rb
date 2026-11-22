@@ -22,7 +22,7 @@ module Ship
     end
 
     def order_from
-      @addresses = current_user.addresses.includes(:area, :station).defualt_where(default_params).order(id: :desc).page(params[:page])
+      @addresses = current_user.addresses.includes(:area, :station).default_where(default_params).order(id: :desc).page(params[:page])
     end
 
     def new
