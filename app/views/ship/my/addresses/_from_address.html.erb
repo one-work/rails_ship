@@ -1,7 +1,7 @@
-<label class="weui-cell weui-cell_active weui-check__label" for="address_id_<%= address.id %>">
+<label class="media" for="address_id_<%= address.id %>">
   <div class="media-content">
     <p>
-      <strong><%= address.contact %></strong>
+      <strong><%= address.contact_person %></strong>
       <span><%= address.tel %></span>
       <% if address.station %>
         <span class="tag"><%= address.station.name %></span>
@@ -13,7 +13,17 @@
     </p>
   </div>
   <div class="media-right" data-controller="input">
-    <%= radio_button_tag 'order[from_address_id]', address.id, address.id.to_s == params[:from_address_id], class: 'weui-check', id: "address_id_#{address.id}", form: 'new_order', data: { action: 'input#form' } %>
+    <%=
+      radio_button_tag(
+        'order[from_address_id]',
+        address.id,
+        address.id.to_s == params[:from_address_id],
+        class: 'weui-check',
+        id: "address_id_#{address.id}",
+        form: 'new_order',
+        data: { action: 'input#form' }
+      )
+    %>
     <span class="weui-icon-checked"></span>
   </div>
 </label>
