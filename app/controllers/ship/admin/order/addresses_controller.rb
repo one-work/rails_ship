@@ -1,11 +1,8 @@
 module Ship
   class Admin::Order::AddressesController < Admin::AddressesController
-    before_action :set_order
     before_action :set_address, only: [:show, :edit, :update, :destroy, :actions]
     before_action :set_new_address, only: [:new, :create]
     before_action :set_geo, only: [:new, :edit]
-    before_action :set_stations, only: [:station]
-    skip_before_action :require_user
 
     def index
       q_params = {}
@@ -34,18 +31,6 @@ module Ship
     end
 
     private
-    def set_stations
-      @stations = Station.default_where(default_params)
-    end
-
-    def set_station
-      @station = Station.find params[:station_id]
-    end
-
-    def set_not_stations
-      @stations = Station.default_where(default_params).where.not(id: @station&.id)
-    end
-
     def set_order
       @cart = current_member.agent_carts.find params[:cart_id]
     end
